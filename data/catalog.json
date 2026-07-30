@@ -1,0 +1,284 @@
+{
+  "categories": [
+    {
+      "id": "biscuits",
+      "name": "Biscuits",
+      "description": "Butter crunch classics to tahini-infused UAE originals.",
+      "color": "#2C1A0E",
+      "brands": [
+        {
+          "id": "lu",
+          "name": "LU",
+          "description": "Pakistan's most iconic biscuit brand since 1966.",
+          "logo": "LU",
+          "products": [
+            { "id": "tuc", "name": "TUC", "desc": "Light, crispy salted crackers — perfect snacking biscuit.", "tags": ["Halal", "Bulk Available"], "image": "/images/product/tuc-biscuit.webp" },
+            { "id": "prince", "name": "Prince Chocolate", "desc": "Chocolate-filled sandwich biscuit, a crowd favourite.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "/images/product/prince-chocolate-biscuit.webp" },
+            { "id": "rio", "name": "Rio", "desc": "Vanilla cream filled sandwich biscuit.", "tags": ["Halal", "Bulk Available"], "image": "/images/product/rio-biscuit.jpg" },
+            { "id": "bakeri", "name": "LU Bakeri", "desc": "Classic glucose biscuit, light and crispy.", "tags": ["Halal", "Bulk Available"], "image": "/images/product/bakeri-biscuit.webp" },
+            { "id": "zeera-plus", "name": "Zeera Plus", "desc": "Cumin-flavoured savoury biscuit, unique regional taste.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "/images/product/zeera-plus-biscuit.webp" }
+          ]
+        },
+        {
+          "id": "peak-freans",
+          "name": "Peak Freans",
+          "description": "Premium biscuit brand with a rich heritage in South Asia.",
+          "logo": "PF",
+          "products": [
+            { "id": "sooper", "name": "Sooper", "desc": "The original glucose biscuit — generations of trust.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "peanut-pik", "name": "Peanut Pik", "desc": "Crunchy peanut biscuit with real peanut pieces.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "cocomo", "name": "Cocomo", "desc": "Chocolate sandwich biscuit with cocoa cream.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "shortake", "name": "ShortCake", "desc": "Buttery shortcake biscuit, classic teatime choice.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        },
+        {
+          "id": "bisconni",
+          "name": "Bisconni",
+          "description": "Modern biscuit brand loved for bold flavours.",
+          "logo": "BC",
+          "products": [
+            { "id": "chocolate-chip", "name": "Chocolate Chip Cookies", "desc": "Soft-baked with Belgian chocolate chips.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "choco-leibniz", "name": "Choco Fills", "desc": "Biscuit with rich chocolate cream filling.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "digestive", "name": "Digestive Oat", "desc": "Wholesome oat biscuit with honey sweetness.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chocolates",
+      "name": "Chocolates",
+      "description": "Belgian-sourced lines, dates & almond specialities, white bark.",
+      "color": "#1A0A00",
+      "brands": [
+        {
+          "id": "candyland",
+          "name": "Candyland",
+          "description": "Pakistan's leading confectionery brand with premium chocolate lines.",
+          "logo": "CL",
+          "products": [
+            { "id": "jubilee", "name": "Jubilee", "desc": "Caramel and chocolate bar — a classic for decades.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "gala", "name": "Gala", "desc": "Chocolate coated biscuit bar with caramel.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "perkz", "name": "Perkz", "desc": "Crispy wafer coated in smooth milk chocolate.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        },
+        {
+          "id": "hilal",
+          "name": "Hilal",
+          "description": "Renowned for premium confectionery across the Gulf.",
+          "logo": "HL",
+          "products": [
+            { "id": "choco-bar", "name": "Choco Bar", "desc": "Rich milk chocolate bar with hazelnut filling.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "white-bark", "name": "White Bark", "desc": "Creamy white chocolate bark with almond crunch.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"] },
+            { "id": "dates-choco", "name": "Dates & Almond Chocolate", "desc": "UAE-inspired — Medjool dates wrapped in dark chocolate.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lollipops",
+      "name": "Lollipops",
+      "description": "Classics and UAE-exclusive flavours in one wholesale range.",
+      "color": "#1B3A2D",
+      "brands": [
+        {
+          "id": "chupa-chups",
+          "name": "Chupa Chups",
+          "description": "The world's most iconic lollipop brand.",
+          "logo": "CC",
+          "products": [
+            { "id": "strawberry-cream", "name": "Strawberry & Cream", "desc": "Classic creamy strawberry swirl.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "cola", "name": "Cola", "desc": "Refreshing cola flavour fizz pop.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "watermelon", "name": "Watermelon", "desc": "Juicy watermelon burst in every lick.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        },
+        {
+          "id": "vidal",
+          "name": "Vidal",
+          "description": "Spanish confectionery brand with bold lollipop range.",
+          "logo": "VD",
+          "products": [
+            { "id": "rainbow-swirl", "name": "Rainbow Swirl Pop", "desc": "Five fruity flavours in one spiral.", "tags": ["Halal", "Bulk Available", "Display Ready"] },
+            { "id": "sour-apple", "name": "Sour Apple Pop", "desc": "Intense sour coating with sweet candy core.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "mango-chilli", "name": "Mango Chilli Pop", "desc": "UAE-exclusive — sweet mango with a chilli kick.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gummies",
+      "name": "Gummies",
+      "description": "Bears, rings, worms, and hearts that move fast off shelves.",
+      "color": "#1A2C1A",
+      "brands": [
+        {
+          "id": "haribo",
+          "name": "Haribo",
+          "description": "The world's favourite gummy brand since 1920.",
+          "logo": "HR",
+          "products": [
+            { "id": "goldbears", "name": "Gold Bears", "desc": "The original 5-flavour gummy bears.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "tangfastics", "name": "Tangfastics", "desc": "Sour-coated mix of gummy shapes.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "starmix", "name": "Starmix", "desc": "Hearts, bears, bottles, eggs and rings.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        },
+        {
+          "id": "trolli",
+          "name": "Trolli",
+          "description": "Bold, quirky gummies for every retail shelf.",
+          "logo": "TR",
+          "products": [
+            { "id": "sour-worms", "name": "Sour Worms", "desc": "Giant sour worms — sour then sweet.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "brite-crawlers", "name": "Brite Crawlers", "desc": "Two-tone sour gummy worms.", "tags": ["Halal", "Bulk Available", "Display Ready"] },
+            { "id": "gummy-rings", "name": "Tropical Rings", "desc": "Mango, pineapple, passionfruit gummy rings.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wafers",
+      "name": "Wafers",
+      "description": "Vanilla, chocolate hazelnut, and strawberry crowd-pleasers.",
+      "color": "#2A1A0A",
+      "brands": [
+        {
+          "id": "loacker",
+          "name": "Loacker",
+          "description": "Premium Austrian wafer brand with 100 years of expertise.",
+          "logo": "LK",
+          "products": [
+            { "id": "vanilla", "name": "Vanilla Cream Wafer", "desc": "Crispy layers with smooth vanilla cream.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "choco", "name": "Chocolate Hazelnut Wafer", "desc": "Rich hazelnut chocolate between crisp wafer layers.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "strawberry", "name": "Strawberry Wafer", "desc": "Light strawberry cream wafer, bestselling flavour.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        },
+        {
+          "id": "ulker",
+          "name": "Ulker",
+          "description": "Turkey's leading confectionery brand in the Gulf.",
+          "logo": "UK",
+          "products": [
+            { "id": "two-fingers", "name": "Wafer Fingers", "desc": "Chocolate-coated wafer fingers, individually wrapped.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "capri", "name": "Capri Wafer", "desc": "Caramel and cocoa layered wafer bar.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toffees",
+      "name": "Toffees",
+      "description": "Individually wrapped for gifting, retail, and impulse displays.",
+      "color": "#2A1500",
+      "brands": [
+        {
+          "id": "mitchells",
+          "name": "Mitchells",
+          "description": "Heritage toffee brand trusted across South Asia & Gulf.",
+          "logo": "MT",
+          "products": [
+            { "id": "butter-toffee", "name": "Classic Butter Toffee", "desc": "Smooth, buttery, individually wrapped in foil.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "caramel", "name": "Salted Caramel Toffee", "desc": "Sea salt caramel with addictive finish.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "coffee-toffee", "name": "Coffee Toffee", "desc": "Real arabica coffee baked into rich toffee.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        },
+        {
+          "id": "werther",
+          "name": "Werther's Original",
+          "description": "Germany's iconic butter candy brand.",
+          "logo": "WO",
+          "products": [
+            { "id": "original", "name": "Original Butter Candies", "desc": "Signature butterscotch hard candy.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "chewy-caramel", "name": "Chewy Caramels", "desc": "Soft chewy caramel with butter cream filling.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "sugar-free", "name": "Sugar Free Original", "desc": "Classic butterscotch taste, no added sugar.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jelly-beans",
+      "name": "Jelly Beans",
+      "description": "The most colourful aisle section — gift jars and bulk bags.",
+      "color": "#0D1F2D",
+      "brands": [
+        {
+          "id": "jelly-belly",
+          "name": "Jelly Belly",
+          "description": "The world's premium jelly bean brand with 50+ flavours.",
+          "logo": "JB",
+          "products": [
+            { "id": "50-flavours", "name": "50 Official Flavours Mix", "desc": "Gift jars and bulk bags with all 50 official flavours.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "tropical", "name": "Tropical Mix", "desc": "Lychee, mango, dragon fruit and guava.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "soda-pop", "name": "Soda Pop Shoppe", "desc": "Seven Soda-inspired jelly bean flavours.", "tags": ["Halal", "Bulk Available", "Gift Ready"] }
+          ]
+        },
+        {
+          "id": "starburst",
+          "name": "Starburst",
+          "description": "Vibrant fruity jelly beans loved worldwide.",
+          "logo": "SB",
+          "products": [
+            { "id": "original-beans", "name": "Original Jelly Beans", "desc": "Strawberry, cherry, lemon and orange in one bag.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "sours-beans", "name": "Sours Jelly Beans", "desc": "Sour-coated fruit jelly beans for bold taste.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marshmallows",
+      "name": "Marshmallows",
+      "description": "A gifting staple and hot-drink companion.",
+      "color": "#1A1A2E",
+      "brands": [
+        {
+          "id": "jet-puffed",
+          "name": "Jet-Puffed",
+          "description": "America's most trusted marshmallow brand.",
+          "logo": "JP",
+          "products": [
+            { "id": "mini-marshmallows", "name": "Mini Marshmallows", "desc": "Perfect hot-chocolate and baking companion.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "vanilla-cloud", "name": "Vanilla Cloud", "desc": "Fluffy standard-size vanilla marshmallows.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "jumbo", "name": "Jumbo Roasters", "desc": "XL marshmallows, ideal for gifting and displays.", "tags": ["Halal", "Bulk Available", "Gift Ready"] }
+          ]
+        },
+        {
+          "id": "dandies",
+          "name": "Dandies",
+          "description": "Premium artisan marshmallow brand.",
+          "logo": "DN",
+          "products": [
+            { "id": "strawberry-twist", "name": "Strawberry Twist", "desc": "Pink and white twisted marshmallows, gift-friendly.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
+            { "id": "toasted-coconut", "name": "Toasted Coconut", "desc": "Coconut-dusted marshmallow for premium gifting.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "candy",
+      "name": "Candy",
+      "description": "Fruit mixes, rose & cardamom, and mint drops with regional taste.",
+      "color": "#2D1A0A",
+      "brands": [
+        {
+          "id": "hilal-candy",
+          "name": "Hilal Candies",
+          "description": "UAE-rooted candy brand with regional flavour expertise.",
+          "logo": "HC",
+          "products": [
+            { "id": "fruit-mix", "name": "Fruit Candy Mix", "desc": "Six fruity flavours in one resealable bag.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "mint-drops", "name": "Mint Drops", "desc": "Classic cooling mint — freshens instantly.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "rose-cardamom", "name": "Rose & Cardamom Drops", "desc": "UAE-exclusive — rose water and cardamom hard candy.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"] }
+          ]
+        },
+        {
+          "id": "trebor",
+          "name": "Trebor",
+          "description": "British mint and candy brand with Gulf presence.",
+          "logo": "TB",
+          "products": [
+            { "id": "softmints", "name": "Softmints", "desc": "Soft, chewy peppermint candy — easy to eat.", "tags": ["Halal", "Bulk Available"] },
+            { "id": "extra-strong", "name": "Extra Strong Mints", "desc": "Intense peppermint hard candy.", "tags": ["Halal", "Bulk Available"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

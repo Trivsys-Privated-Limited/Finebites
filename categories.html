@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Categories — FineBites Wholesale Confectionery</title>
+<meta name="description" content="Browse all 9 wholesale confectionery categories from FineBites — Lollipops, Biscuits, Chocolates, Gummies, Wafers, Toffees, Jelly Beans, Marshmallows and Candy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1B5E20;--green-dark:#123E15;--gold:#B8860B;--cream:#FDF8F0;
+  --ink:#1A0A00;--border:rgba(0,0,0,0.08);--text:#241F1A;--text-muted:#6B6258;
+  --ease-enter:cubic-bezier(0.16,1,0.3,1);--ease-exit:cubic-bezier(0.4,0,1,1);
+  --container:1280px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:400;color:var(--text);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img,svg{display:block;}a{color:inherit;text-decoration:none;}
+button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit;}
+ul{list-style:none;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2;}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 32px;}
+.label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:14px;}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;padding:15px 30px;border-radius:6px;transition:background .2s,color .2s,transform .12s;white-space:nowrap;}
+.btn:active{transform:scale(0.98);}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:var(--green-dark);}
+.btn-quote{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.3px;color:var(--green);border:1px solid var(--green);padding:10px 18px;border-radius:6px;transition:background .18s,color .18s,transform .12s;}
+.btn-quote:hover{background:var(--green);color:#fff;}
+.reveal{opacity:0;transform:translateY(30px);}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:22px 0;transition:background .3s,border-color .3s,padding .3s;border-bottom:1px solid transparent;}
+.nav.scrolled{background:rgba(253,248,240,0.96);border-bottom:1px solid var(--border);padding:14px 0;backdrop-filter:blur(6px);}
+.nav.on-dark:not(.scrolled) .nav-links>li>a,.nav.on-dark:not(.scrolled) .logo .fine{color:#fff;}
+.nav.on-dark:not(.scrolled) .hamburger span{background:#fff;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.logo svg{width:24px;height:24px;color:var(--green);flex-shrink:0;}
+.logo .fine{color:var(--green);transition:color .2s;}.logo .bites{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{font-size:15px;font-weight:500;color:var(--ink);position:relative;padding:4px 0;display:inline-flex;align-items:center;gap:4px;transition:color .2s;}
+.nav-links>li>a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .2s;}
+.nav-links>li>a:hover::after,.nav-links>li>a.active::after{transform:scaleX(1);}
+.nav-links>li>a.active{color:var(--green);}
+.nav-cta{display:flex;align-items:center;gap:20px;}
+.nav-cta .btn-primary{padding:12px 24px;font-size:14px;}
+.nav-products{padding-bottom:14px;margin-bottom:-14px;}
+.mega-dropdown{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);width:480px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 18px 40px rgba(0,0,0,0.08);}
+.nav-products:hover .mega-dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
+.mega-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.mega-grid a{display:block;padding:12px 14px;border-radius:6px;font-size:14px;color:var(--text);transition:background .15s,color .15s;}
+.mega-grid a:hover{background:var(--cream);color:var(--green);}
+.mega-grid a::after{display:none;}
+.chevron{width:12px;height:12px;transition:transform .2s;}
+.nav-products:hover .chevron{transform:rotate(180deg);}
+.hamburger{display:none;position:relative;z-index:295;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;cursor:pointer;flex-shrink:0;}
+.hamburger span{display:block;width:100%;height:2px;background:var(--ink);transition:transform .2s,opacity .2s,background .2s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-overlay{position:fixed;inset:0;background:var(--cream);z-index:290;display:flex;flex-direction:column;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.mobile-overlay.open{opacity:1;pointer-events:auto;}
+.mobile-links{display:flex;flex-direction:column;gap:6px;}
+.mobile-links a{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--ink);padding:10px 0;}
+.mobile-sub-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:20px 0 8px;}
+.mobile-cats{display:flex;flex-direction:column;gap:2px;margin-bottom:10px;}
+.mobile-cats a{font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:var(--text-muted);padding:6px 0;}
+.mobile-overlay .btn-primary{margin-top:24px;align-self:flex-start;}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.nav-cta .btn-primary{padding:10px 18px;font-size:13px;}}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:500;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;border-radius:14px;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;padding:44px;position:relative;}
+.modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--text-muted);transition:background .15s,color .15s;}
+.modal-close:hover{background:var(--cream);color:var(--ink);}
+.modal-close svg{width:18px;height:18px;}
+.modal h3{font-size:1.6rem;color:var(--ink);margin-bottom:8px;}
+.modal-sub{font-size:14px;color:var(--text-muted);margin-bottom:30px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.form-field.full{grid-column:1/3;}
+.form-field label{font-size:13px;font-weight:500;color:var(--text);}
+.form-field label .req{color:var(--green);}
+.form-field input,.form-field select,.form-field textarea{border:1px solid var(--border);border-radius:6px;padding:11px 14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--cream);transition:border-color .15s;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--green);}
+.form-field textarea{resize:vertical;min-height:80px;}
+.field-error{font-size:12px;color:#B3261E;min-height:14px;}
+.modal-submit{width:100%;justify-content:center;margin-top:8px;}
+.thankyou{display:none;text-align:center;padding:30px 0;}
+.thankyou.show{display:block;}
+.thankyou svg{width:54px;height:54px;color:var(--green);margin:0 auto 20px;}
+.thankyou h3{margin-bottom:10px;}
+.thankyou p{color:var(--text-muted);font-size:15px;}
+.form-body.hide{display:none;}
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:90px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;}
+.footer-logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:18px;}
+.footer-logo svg{width:22px;height:22px;color:var(--gold);}
+.footer-logo .fine{color:#fff;}.footer-logo .bites{color:var(--gold);}
+.footer-desc{font-size:14px;max-width:280px;line-height:1.7;color:rgba(255,255,255,0.55);}
+.footer h4{color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
+.footer ul{display:flex;flex-direction:column;gap:12px;}
+.footer ul a,.footer ul button{font-size:14px;color:rgba(255,255,255,0.55);transition:color .15s;text-align:left;}
+.footer ul a:hover,.footer ul button:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:24px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:10px;}
+/* BREADCRUMB */
+.breadcrumb{font-size:13px;color:var(--text-muted);padding:20px 0;}
+.breadcrumb a{color:var(--text-muted);transition:color .15s;}
+.breadcrumb a:hover{color:var(--green);}
+.breadcrumb .sep{margin:0 8px;color:var(--border);}
+.breadcrumb .current{color:var(--ink);font-weight:500;}
+@media(max-width:980px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.wrap{padding:0 22px;}.modal{padding:32px 24px;}.form-grid{grid-template-columns:1fr;}.form-field.full{grid-column:1;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
+/* PAGE HERO */
+.page-hero{padding:160px 0 70px;background:var(--green);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1800&q=60');background-size:cover;background-position:center;opacity:0.12;}
+.page-hero-inner{position:relative;z-index:1;}
+.page-hero .label{color:var(--gold);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);color:#fff;margin-bottom:16px;}
+.page-hero p{font-size:16px;color:rgba(255,255,255,0.78);max-width:500px;}
+/* CATEGORIES GRID */
+.cats-section{padding:80px 0 120px;}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.cat-big-card{position:relative;border-radius:16px;overflow:hidden;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:#fff;text-decoration:none;transition:transform .25s var(--ease-enter),box-shadow .25s var(--ease-enter);background-size:cover;background-position:center;}
+.cat-big-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.7) 100%);transition:background .25s;}
+.cat-big-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -12px rgba(0,0,0,0.35);}
+.cat-big-card:hover::before{background:linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.8) 100%);}
+.cat-big-card-body{position:relative;z-index:1;}
+.cat-big-card .cat-num{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:10px;display:block;}
+.cat-big-card h3{font-size:1.6rem;color:#fff;margin-bottom:8px;}
+.cat-big-card p{font-size:14px;color:rgba(255,255,255,0.75);margin-bottom:18px;}
+.cat-big-card .cat-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:9px 16px;border-radius:6px;transition:background .18s,border-color .18s;}
+.cat-big-card:hover .cat-cta{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.7);}
+.cat-big-card .cat-cta svg{width:13px;height:13px;transition:transform .2s;}
+.cat-big-card:hover .cat-cta svg{transform:translateX(4px);}
+@media(max-width:980px){.cats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.cats-grid{grid-template-columns:1fr;}.cat-big-card{min-height:260px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav on-dark" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg><span><span class="fine">FINE</span><span class="bites">BiTES</span></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-products">
+        <a href="index.html#range">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="chevron"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="mega-dropdown"><div class="mega-grid"><a href="category/lollipops.html">Lollipops</a><a href="category/biscuits.html">Biscuits</a><a href="category/chocolates.html">Chocolates</a><a href="category/gummies.html">Gummies</a><a href="category/wafers.html">Wafers</a><a href="category/toffees.html">Toffees</a><a href="category/jelly-beans.html">Jelly Beans</a><a href="category/marshmallows.html">Marshmallows</a><a href="category/candy.html">Candy</a></div></div>
+      </li>
+      <li><a href="categories.html" class="active">Categories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="btn btn-primary js-open-modal">Request a Quote</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay">
+    <nav class="mobile-links">
+      <a href="index.html">Home</a>
+      <span class="mobile-sub-label">Products</span>
+      <div class="mobile-cats"><a href="category/lollipops.html">Lollipops</a><a href="category/biscuits.html">Biscuits</a><a href="category/chocolates.html">Chocolates</a><a href="category/gummies.html">Gummies</a><a href="category/wafers.html">Wafers</a><a href="category/toffees.html">Toffees</a><a href="category/jelly-beans.html">Jelly Beans</a><a href="category/marshmallows.html">Marshmallows</a><a href="category/candy.html">Candy</a></div>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn btn-primary js-open-modal">Request a Quote</button>
+    </nav>
+  </div>
+</nav>
+
+<header class="page-hero on-dark">
+  <div class="wrap page-hero-inner">
+    <span class="label">FineBites · Our Range</span>
+    <h1>All Categories</h1>
+    <p>Nine confectionery categories, all wholesale-ready for retailers, supermarkets, and distributors across the UAE.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span class="sep">/</span><span class="current">Categories</span>
+  </nav>
+</div>
+
+<section class="cats-section">
+  <div class="wrap">
+    <div class="cats-grid">
+
+      <a href="category/lollipops.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">01 · 6 Products</span>
+          <h3>Lollipops</h3>
+          <p>Classics and UAE-exclusive flavours in one wholesale range.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/biscuits.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">02 · 6 Products</span>
+          <h3>Biscuits</h3>
+          <p>Butter crunch classics to tahini-infused UAE originals.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/chocolates.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">03 · 6 Products</span>
+          <h3>Chocolates</h3>
+          <p>Belgian-sourced lines, dates & almond specialities, white bark.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/gummies.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">04 · 6 Products</span>
+          <h3>Gummies</h3>
+          <p>Bears, rings, worms, and hearts that move fast off shelves.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/wafers.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">05 · 6 Products</span>
+          <h3>Wafers</h3>
+          <p>Vanilla, chocolate hazelnut, and strawberry crowd-pleasers.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/toffees.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">06 · 6 Products</span>
+          <h3>Toffees</h3>
+          <p>Individually wrapped for gifting, retail, and impulse displays.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/jelly-beans.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1625955117327-3c70e7e2e9bf?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">07 · 6 Products</span>
+          <h3>Jelly Beans</h3>
+          <p>The most colourful aisle section — gift jars and bulk bags.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/marshmallows.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1584536209662-c6258bcffa6e?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">08 · 6 Products</span>
+          <h3>Marshmallows</h3>
+          <p>A gifting staple and hot-drink companion.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a href="category/candy.html" class="cat-big-card reveal" style="background-image:url('https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format&fit=crop&w=800&q=80');">
+        <div class="cat-big-card-body">
+          <span class="cat-num">09 · 6 Products</span>
+          <h3>Candy</h3>
+          <p>Fruit mixes, rose & cardamom, and mint drops with regional taste.</p>
+          <span class="cat-cta">View Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg><span><span class="fine">FINE</span><span class="bites">BiTES</span></span></div>
+        <p class="footer-desc">Premium wholesale confectionery, supplying distributors, supermarkets and bakeries across the UAE and the wider Gulf.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul><li><a href="category/lollipops.html">Lollipops</a></li><li><a href="category/biscuits.html">Biscuits</a></li><li><a href="category/chocolates.html">Chocolates</a></li><li><a href="category/gummies.html">Gummies</a></li><li><a href="category/wafers.html">Wafers</a></li><li><a href="category/toffees.html">Toffees</a></li><li><a href="category/jelly-beans.html">Jelly Beans</a></li><li><a href="category/marshmallows.html">Marshmallows</a></li><li><a href="category/candy.html">Candy</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Dubai, United Arab Emirates</li>
+          <li><button class="js-open-modal">hello@finebites.com</button></li>
+          <li><button class="js-open-modal">+971 4 000 0000</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 FineBites. All rights reserved.</span>
+      <span>Powered by PBS Digitals</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="form-body" id="formBody">
+      <h3 id="modalTitle">Request a Wholesale Quote</h3>
+      <p class="modal-sub">Tell us about your business and what you'd like to stock. We reply within 24 hours.</p>
+      <form id="inquiryForm" novalidate>
+        <div class="form-grid">
+          <div class="form-field"><label>Full Name <span class="req">*</span></label><input type="text" name="fullName" autocomplete="name"><span class="field-error" data-err="fullName"></span></div>
+          <div class="form-field"><label>Company Name <span class="req">*</span></label><input type="text" name="companyName" autocomplete="organization"><span class="field-error" data-err="companyName"></span></div>
+          <div class="form-field"><label>Email Address <span class="req">*</span></label><input type="email" name="email" autocomplete="email"><span class="field-error" data-err="email"></span></div>
+          <div class="form-field"><label>Phone / WhatsApp <span class="req">*</span></label><input type="tel" name="phone" autocomplete="tel"><span class="field-error" data-err="phone"></span></div>
+          <div class="form-field full"><label>Message</label><textarea name="message" placeholder="What categories or products are you interested in?"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary modal-submit">Send Inquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+    <div class="thankyou" id="thankyou">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+      <h3>Inquiry Sent!</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);});
+document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('open');document.getElementById('mobileOverlay').classList.toggle('open');});
+document.querySelectorAll('.mobile-overlay a,.mobile-overlay button:not(.js-open-modal)').forEach(el=>el.addEventListener('click',()=>{document.getElementById('hamburger').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('open');}));
+const overlay=document.getElementById('modalOverlay'),modalClose=document.getElementById('modalClose');
+function openModal(){overlay.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){overlay.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.js-open-modal').forEach(b=>b.addEventListener('click',openModal));
+modalClose.addEventListener('click',closeModal);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('inquiryForm').addEventListener('submit',function(e){
+  e.preventDefault();let valid=true;
+  ['fullName','companyName','email','phone'].forEach(n=>{
+    const f=this[n],err=document.querySelector('[data-err="'+n+'"]');
+    if(!f.value.trim()){err.textContent='This field is required.';valid=false;}
+    else if(n==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)){err.textContent='Enter a valid email.';valid=false;}
+    else err.textContent='';
+  });
+  if(valid){document.getElementById('formBody').classList.add('hide');document.getElementById('thankyou').classList.add('show');}
+});
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.transition='opacity .6s cubic-bezier(0.16,1,0.3,1),transform .6s cubic-bezier(0.16,1,0.3,1)';e.target.style.opacity='1';e.target.style.transform='none';io.unobserve(e.target);}});},{threshold:0.1});
+reveals.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

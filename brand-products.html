@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Brand Products — FineBites</title>
+<meta name="description" content="Browse wholesale products from this brand at FineBites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1B5E20; --green-dark:#123E15; --gold:#B8860B;
+  --cream:#FDF8F0; --ink:#1A0A00; --border:rgba(0,0,0,0.08);
+  --text:#241F1A; --text-muted:#6B6258;
+  --ease-enter:cubic-bezier(0.16,1,0.3,1);
+  --container:1280px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img,svg{display:block;} a{color:inherit;text-decoration:none;}
+button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit;}
+ul{list-style:none;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2;}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 32px;}
+.label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:14px;}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;padding:15px 30px;border-radius:6px;transition:background .2s,color .2s,transform .12s;white-space:nowrap;}
+.btn:active{transform:scale(0.98);}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:var(--green-dark);}
+.btn-quote{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--green);border:1px solid var(--green);padding:10px 18px;border-radius:6px;transition:background .18s,color .18s;}
+.btn-quote:hover{background:var(--green);color:#fff;}
+.reveal{opacity:0;transform:translateY(28px);}
+</style>
+<style>
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:22px 0;transition:background .3s,border-color .3s,padding .3s;border-bottom:1px solid transparent;}
+.nav.scrolled{background:rgba(253,248,240,0.96);border-bottom:1px solid var(--border);padding:14px 0;backdrop-filter:blur(6px);}
+.nav.on-dark:not(.scrolled) .nav-links>li>a,.nav.on-dark:not(.scrolled) .logo .fine{color:#fff;}
+.nav.on-dark:not(.scrolled) .hamburger span{background:#fff;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.logo svg{width:24px;height:24px;color:var(--green);flex-shrink:0;}
+.logo .fine{color:var(--green);transition:color .2s;} .logo .bites{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{font-size:15px;font-weight:500;color:var(--ink);padding:4px 0;display:inline-flex;align-items:center;gap:4px;transition:color .2s;position:relative;}
+.nav-links>li>a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .2s;}
+.nav-links>li>a:hover::after{transform:scaleX(1);}
+.nav-cta{display:flex;align-items:center;gap:20px;}
+.nav-cta .btn-primary{padding:12px 24px;font-size:14px;}
+.nav-products{padding-bottom:14px;margin-bottom:-14px;}
+.mega-dropdown{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);width:480px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 18px 40px rgba(0,0,0,0.08);}
+.nav-products:hover .mega-dropdown{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
+.mega-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.mega-grid a{display:block;padding:12px 14px;border-radius:6px;font-size:14px;color:var(--text);transition:background .15s,color .15s;}
+.mega-grid a:hover{background:var(--cream);color:var(--green);}
+.mega-grid a::after{display:none;}
+.chevron{width:12px;height:12px;transition:transform .2s;}
+.nav-products:hover .chevron{transform:rotate(180deg);}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;cursor:pointer;flex-shrink:0;position:relative;z-index:295;}
+.hamburger span{display:block;width:100%;height:2px;background:var(--ink);transition:transform .2s,opacity .2s,background .2s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-overlay{position:fixed;inset:0;background:var(--cream);z-index:290;display:flex;flex-direction:column;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.mobile-overlay.open{opacity:1;pointer-events:auto;}
+.mobile-links{display:flex;flex-direction:column;gap:6px;}
+.mobile-links a{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--ink);padding:10px 0;}
+.mobile-sub-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:20px 0 8px;}
+.mobile-cats{display:flex;flex-direction:column;gap:2px;margin-bottom:10px;}
+.mobile-cats a{font-family:'Inter',sans-serif;font-size:16px;font-weight:500;color:var(--text-muted);padding:6px 0;}
+.mobile-overlay .btn-primary{margin-top:24px;align-self:flex-start;}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.nav-cta .btn-primary{padding:10px 18px;font-size:13px;}}
+</style>
+<style>
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:500;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;border-radius:14px;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;padding:44px;position:relative;}
+.modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--text-muted);transition:background .15s,color .15s;}
+.modal-close:hover{background:var(--cream);color:var(--ink);}
+.modal-close svg{width:18px;height:18px;}
+.modal h3{font-size:1.6rem;color:var(--ink);margin-bottom:8px;}
+.modal-sub{font-size:14px;color:var(--text-muted);margin-bottom:30px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.form-field.full{grid-column:1/3;}
+.form-field label{font-size:13px;font-weight:500;color:var(--text);}
+.form-field label .req{color:var(--green);}
+.form-field input,.form-field select,.form-field textarea{border:1px solid var(--border);border-radius:6px;padding:11px 14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:var(--cream);transition:border-color .15s;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--green);}
+.form-field textarea{resize:vertical;min-height:80px;}
+.field-error{font-size:12px;color:#B3261E;min-height:14px;}
+.modal-submit{width:100%;justify-content:center;margin-top:8px;}
+.thankyou{display:none;text-align:center;padding:30px 0;}
+.thankyou.show{display:block;}
+.thankyou svg{width:54px;height:54px;color:var(--green);margin:0 auto 20px;}
+.thankyou h3{margin-bottom:10px;} .thankyou p{color:var(--text-muted);font-size:15px;}
+.form-body.hide{display:none;}
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:90px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;}
+.footer-logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:18px;}
+.footer-logo svg{width:22px;height:22px;color:var(--gold);}
+.footer-logo .fine{color:#fff;} .footer-logo .bites{color:var(--gold);}
+.footer-desc{font-size:14px;max-width:280px;line-height:1.7;color:rgba(255,255,255,0.55);}
+.footer h4{color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
+.footer ul{display:flex;flex-direction:column;gap:12px;}
+.footer ul a,.footer ul button{font-size:14px;color:rgba(255,255,255,0.55);transition:color .15s;text-align:left;}
+.footer ul a:hover,.footer ul button:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:24px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:10px;}
+/* BREADCRUMB */
+.breadcrumb{font-size:13px;color:var(--text-muted);padding:20px 0;}
+.breadcrumb a{color:var(--text-muted);transition:color .15s;}
+.breadcrumb a:hover{color:var(--green);}
+.breadcrumb .sep{margin:0 8px;color:var(--border);}
+.breadcrumb .current{color:var(--ink);font-weight:500;}
+@media(max-width:980px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.wrap{padding:0 22px;}.modal{padding:32px 24px;}.form-grid{grid-template-columns:1fr;}.form-field.full{grid-column:1;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
+</style>
+<style>
+/* HERO */
+.brand-hero{padding:170px 0 80px;color:#fff;position:relative;overflow:hidden;}
+.brand-hero .label{color:var(--gold);}
+.brand-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.15;color:#fff;max-width:640px;margin-bottom:20px;}
+.brand-hero p{font-size:16px;color:rgba(255,255,255,0.78);max-width:460px;margin-bottom:34px;}
+.brand-hero .btn-primary{background:#fff;color:var(--ink);}
+.brand-hero .btn-primary:hover{background:var(--cream);}
+/* LAYOUT */
+.products-section{padding:0 0 120px;}
+.products-layout{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start;padding-top:40px;}
+/* SIDEBAR */
+.prod-sidebar{border:1px solid var(--border);border-radius:12px;padding:28px 24px;position:sticky;top:110px;}
+.sidebar-logo-badge{width:64px;height:64px;border-radius:12px;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:18px;}
+.prod-sidebar .count{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
+.prod-sidebar h4{font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+.prod-sidebar p{font-size:13.5px;color:var(--text-muted);margin-bottom:22px;}
+.prod-sidebar .btn-quote{width:100%;justify-content:center;}
+.back-link{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--text-muted);margin-top:16px;transition:color .15s;}
+.back-link:hover{color:var(--green);}
+.back-link svg{width:13px;height:13px;transform:rotate(180deg);}
+/* PRODUCT GRID */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
+.product-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column;opacity:0;transform:translateY(24px);}
+.product-card-top{height:150px;display:flex;align-items:center;justify-content:center;}
+.product-card-top svg{width:54px;height:54px;color:var(--green);}
+.product-card-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.product-name{font-size:1.05rem;font-weight:600;color:var(--ink);font-family:'Playfair Display',serif;}
+.product-desc{font-size:14px;color:var(--text-muted);flex:1;}
+.product-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag-chip{font-size:11px;font-weight:500;color:var(--green);background:var(--cream);border:1px solid var(--border);border-radius:5px;padding:4px 9px;}
+.product-card .btn-quote{align-self:flex-start;margin-top:4px;}
+/* SKELETON */
+.skeleton{background:linear-gradient(90deg,#e8e0d8 25%,#f4ede5 50%,#e8e0d8 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.product-card.skeleton-card{pointer-events:none;min-height:260px;opacity:1;transform:none;}
+/* ERROR */
+.error-state{text-align:center;padding:80px 20px;}
+.error-state svg{width:56px;height:56px;color:var(--text-muted);margin:0 auto 20px;}
+.error-state h3{font-size:1.4rem;color:var(--ink);margin-bottom:10px;}
+.error-state p{color:var(--text-muted);font-size:15px;}
+@media(max-width:980px){.products-layout{grid-template-columns:1fr;}.prod-sidebar{position:static;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav on-dark" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg>
+      <span><span class="fine">FINE</span><span class="bites">BiTES</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-products">
+        <a href="index.html#range">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="chevron"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="mega-dropdown"><div class="mega-grid">
+          <a href="category-brands.html?cat=lollipops">Lollipops</a>
+          <a href="category-brands.html?cat=biscuits">Biscuits</a>
+          <a href="category-brands.html?cat=chocolates">Chocolates</a>
+          <a href="category-brands.html?cat=gummies">Gummies</a>
+          <a href="category-brands.html?cat=wafers">Wafers</a>
+          <a href="category-brands.html?cat=toffees">Toffees</a>
+          <a href="category-brands.html?cat=jelly-beans">Jelly Beans</a>
+          <a href="category-brands.html?cat=marshmallows">Marshmallows</a>
+          <a href="category-brands.html?cat=candy">Candy</a>
+        </div></div>
+      </li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="btn btn-primary js-open-modal">Request a Quote</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay">
+    <nav class="mobile-links">
+      <a href="index.html">Home</a>
+      <span class="mobile-sub-label">Products</span>
+      <div class="mobile-cats">
+        <a href="category-brands.html?cat=lollipops">Lollipops</a>
+        <a href="category-brands.html?cat=biscuits">Biscuits</a>
+        <a href="category-brands.html?cat=chocolates">Chocolates</a>
+        <a href="category-brands.html?cat=gummies">Gummies</a>
+        <a href="category-brands.html?cat=wafers">Wafers</a>
+        <a href="category-brands.html?cat=toffees">Toffees</a>
+        <a href="category-brands.html?cat=jelly-beans">Jelly Beans</a>
+        <a href="category-brands.html?cat=marshmallows">Marshmallows</a>
+        <a href="category-brands.html?cat=candy">Candy</a>
+      </div>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn btn-primary js-open-modal">Request a Quote</button>
+    </nav>
+  </div>
+</nav>
+
+<!-- HERO — filled by JS -->
+<header class="brand-hero" id="brandHero" style="background:#1B5E20;">
+  <div class="wrap">
+    <span class="label" id="heroLabel">FINEBITES · LOADING…</span>
+    <h1 id="heroTitle">Loading…</h1>
+    <p id="heroDesc"></p>
+    <button class="btn btn-primary js-open-modal" id="heroQuoteBtn">Request Wholesale Quote</button>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span class="sep">/</span>
+    <a href="categories.html">Categories</a><span class="sep">/</span>
+    <a href="#" id="breadcrumbCat">…</a><span class="sep">/</span>
+    <span class="current" id="breadcrumbBrand">…</span>
+  </nav>
+</div>
+
+<!-- PRODUCTS LAYOUT -->
+<section class="products-section">
+  <div class="wrap products-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="prod-sidebar reveal" id="prodSidebar">
+      <div class="sidebar-logo-badge" id="sidebarLogo">…</div>
+      <span class="count" id="sidebarCount">— Products</span>
+      <h4 id="sidebarName">Loading…</h4>
+      <p id="sidebarDesc"></p>
+      <button class="btn-quote js-open-modal" id="sidebarQuoteBtn">Request a Quote</button>
+      <a href="#" class="back-link" id="backLink">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        Back to brands
+      </a>
+    </aside>
+
+    <!-- PRODUCT GRID -->
+    <div class="product-grid" id="productGrid">
+      <div class="product-card skeleton-card skeleton"></div>
+      <div class="product-card skeleton-card skeleton"></div>
+      <div class="product-card skeleton-card skeleton"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg><span><span class="fine">FINE</span><span class="bites">BiTES</span></span></div>
+        <p class="footer-desc">Premium wholesale confectionery, supplying distributors, supermarkets and bakeries across the UAE and the wider Gulf.</p>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="categories.html">Categories</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Categories</h4><ul>
+        <li><a href="category-brands.html?cat=lollipops">Lollipops</a></li>
+        <li><a href="category-brands.html?cat=biscuits">Biscuits</a></li>
+        <li><a href="category-brands.html?cat=chocolates">Chocolates</a></li>
+        <li><a href="category-brands.html?cat=gummies">Gummies</a></li>
+        <li><a href="category-brands.html?cat=wafers">Wafers</a></li>
+        <li><a href="category-brands.html?cat=toffees">Toffees</a></li>
+        <li><a href="category-brands.html?cat=jelly-beans">Jelly Beans</a></li>
+        <li><a href="category-brands.html?cat=marshmallows">Marshmallows</a></li>
+        <li><a href="category-brands.html?cat=candy">Candy</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul><li>Dubai, United Arab Emirates</li><li><button class="js-open-modal">hello@finebites.com</button></li><li><button class="js-open-modal">+971 4 000 0000</button></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 FineBites. All rights reserved.</span><span>Powered by PBS Digitals</span></div>
+  </div>
+</footer>
+
+<!-- QUOTE MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="form-body" id="formBody">
+      <h3 id="modalTitle">Request a Wholesale Quote</h3>
+      <p class="modal-sub">Tell us about your business and what you'd like to stock. We reply within 24 hours.</p>
+      <form id="inquiryForm" novalidate>
+        <div class="form-grid">
+          <div class="form-field"><label>Full Name <span class="req">*</span></label><input type="text" name="fullName" autocomplete="name"><span class="field-error" data-err="fullName"></span></div>
+          <div class="form-field"><label>Company Name <span class="req">*</span></label><input type="text" name="companyName" autocomplete="organization"><span class="field-error" data-err="companyName"></span></div>
+          <div class="form-field"><label>Email <span class="req">*</span></label><input type="email" name="email" autocomplete="email"><span class="field-error" data-err="email"></span></div>
+          <div class="form-field"><label>Phone / WhatsApp <span class="req">*</span></label><input type="tel" name="phone" autocomplete="tel"><span class="field-error" data-err="phone"></span></div>
+          <div class="form-field full"><label>Product Interest</label><input type="text" name="productInterest" id="productInterestField" placeholder="e.g. TUC Crackers — LU Biscuits"></div>
+          <div class="form-field full"><label>Message</label><textarea name="message" placeholder="Quantity needed, delivery location, etc."></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary modal-submit">Send Inquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+    <div class="thankyou" id="thankyou">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+      <h3>Inquiry Sent!</h3><p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── 1. URL params ─────────────────────────────────────────────── */
+const params  = new URLSearchParams(window.location.search);
+const brandId = params.get('brand');
+const catId   = params.get('cat');
+
+/* ── 2. Nav scroll ─────────────────────────────────────────────── */
+const navEl = document.getElementById('nav');
+window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 40));
+
+/* ── 3. Hamburger ──────────────────────────────────────────────── */
+const hamburger     = document.getElementById('hamburger');
+const mobileOverlay = document.getElementById('mobileOverlay');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileOverlay.classList.toggle('open');
+});
+mobileOverlay.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+  })
+);
+
+/* ── 4. Modal ──────────────────────────────────────────────────── */
+const modalOverlay = document.getElementById('modalOverlay');
+const modalClose   = document.getElementById('modalClose');
+function openModal(productName) {
+  if (productName) document.getElementById('productInterestField').value = productName;
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.js-open-modal').forEach(b =>
+  b.addEventListener('click', () => openModal())
+);
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  let ok = true;
+  ['fullName','companyName','email','phone'].forEach(n => {
+    const f = this[n], err = document.querySelector('[data-err="'+n+'"]');
+    if (!f.value.trim()) { err.textContent = 'Required.'; ok = false; }
+    else if (n === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value)) { err.textContent = 'Invalid email.'; ok = false; }
+    else err.textContent = '';
+  });
+  if (ok) {
+    document.getElementById('formBody').classList.add('hide');
+    document.getElementById('thankyou').classList.add('show');
+  }
+});
+
+/* ── 5. Reveal animation ───────────────────────────────────────── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.transition = 'opacity .55s cubic-bezier(0.16,1,0.3,1), transform .55s cubic-bezier(0.16,1,0.3,1)';
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'none';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── 6. Product card SVG icons per category ────────────────────── */
+const ICONS = {
+  biscuits:     `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="16"/><circle cx="18" cy="18" r="1.6" fill="currentColor" stroke="none"/><circle cx="31" cy="19" r="1.6" fill="currentColor" stroke="none"/><circle cx="24" cy="25" r="1.6" fill="currentColor" stroke="none"/><circle cx="17" cy="30" r="1.6" fill="currentColor" stroke="none"/><circle cx="30" cy="30" r="1.6" fill="currentColor" stroke="none"/></svg>`,
+  chocolates:   `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="14" width="32" height="20" rx="2"/><line x1="24" y1="14" x2="24" y2="34"/><line x1="8" y1="24" x2="40" y2="24"/></svg>`,
+  lollipops:    `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="17" r="11"/><path d="M24 28L24 44"/></svg>`,
+  gummies:      `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="17" cy="14" r="4"/><circle cx="31" cy="14" r="4"/><path d="M14 20a10 12 0 1 0 20 0a10 12 0 1 0-20 0"/></svg>`,
+  wafers:       `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="9" width="28" height="6"/><rect x="10" y="18" width="28" height="6"/><rect x="10" y="27" width="28" height="6"/><rect x="10" y="36" width="28" height="4"/></svg>`,
+  toffees:      `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="14" y="18" width="20" height="12" rx="2"/><path d="M14 20L6 16M14 28L6 32"/><path d="M34 20L42 16M34 28L42 32"/></svg>`,
+  'jelly-beans':`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8C32 8 38 16 38 26C38 36 32 40 24 40C16 40 10 36 10 26C10 16 16 8 24 8Z"/><circle cx="20" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="29" cy="24" r="1.4" fill="currentColor" stroke="none"/><circle cx="21" cy="31" r="1.4" fill="currentColor" stroke="none"/></svg>`,
+  marshmallows: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="11" width="28" height="11" rx="5.5"/><rect x="10" y="26" width="28" height="11" rx="5.5"/></svg>`,
+  candy:        `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="10"/><path d="M14 24L6 18M14 24L6 30"/><path d="M34 24L42 18M34 24L42 30"/></svg>`,
+};
+const CARD_COLORS = {
+  biscuits:'#F2E6D9', chocolates:'#E7DCD2', lollipops:'#FBE4EC',
+  gummies:'#E3F1E6',  wafers:'#FBEFE0',     toffees:'#F1E3D3',
+  'jelly-beans':'#E2F1EF', marshmallows:'#FDEEF0', candy:'#EFE3F1',
+};
+
+/* ── 7. Render error ───────────────────────────────────────────── */
+function renderError(msg) {
+  document.getElementById('productGrid').innerHTML = `
+    <div class="error-state" style="grid-column:1/-1;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/>
+      </svg>
+      <h3>Something went wrong</h3>
+      <p>${msg}</p>
+    </div>`;
+}
+
+/* ── 8. Render products ────────────────────────────────────────── */
+function renderBrand(data) {
+  const cat = data.category;
+  const icon      = ICONS[cat.id] || ICONS['biscuits'];
+  const cardColor = CARD_COLORS[cat.id] || '#F2E6D9';
+
+  /* page meta */
+  document.getElementById('pageTitle').textContent   = data.name + ' Products — FineBites';
+  document.getElementById('heroLabel').textContent   = 'FINEBITES · ' + cat.name.toUpperCase() + ' · ' + data.name.toUpperCase();
+  document.getElementById('heroTitle').textContent   = data.name;
+  document.getElementById('heroDesc').textContent    = data.description;
+  document.getElementById('heroQuoteBtn').dataset.product = data.name;
+  document.getElementById('brandHero').style.background = cat.color || '#1B5E20';
+  document.getElementById('sidebarLogo').style.background = cat.color || '#1B5E20';
+
+  /* breadcrumb */
+  const catLink = document.getElementById('breadcrumbCat');
+  catLink.textContent = cat.name;
+  catLink.href = 'category-brands.html?cat=' + encodeURIComponent(cat.id);
+  document.getElementById('breadcrumbBrand').textContent = data.name;
+
+  /* back link */
+  document.getElementById('backLink').href = 'category-brands.html?cat=' + encodeURIComponent(cat.id);
+
+  /* sidebar */
+  document.getElementById('sidebarLogo').textContent  = data.logo;
+  document.getElementById('sidebarCount').textContent = data.products.length + ' Product' + (data.products.length !== 1 ? 's' : '');
+  document.getElementById('sidebarName').textContent  = data.name;
+  document.getElementById('sidebarDesc').textContent  = data.description;
+  document.getElementById('sidebarQuoteBtn').dataset.product = data.name;
+
+  /* product grid */
+  const grid = document.getElementById('productGrid');
+  if (!data.products || data.products.length === 0) {
+    grid.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1;">No products listed yet.</p>';
+    return;
+  }
+
+  grid.innerHTML = data.products.map(p => {
+    // 1. JSON key check (image or images)
+    const imgUrl = p.image || p.images;
+    
+    // 2. Agar image path ho to <img> show karo, warna fallback SVG icon
+    const mediaContent = imgUrl 
+      ? `<img src="${imgUrl}" alt="${p.name}" style="max-width:100%; max-height:100%; object-fit:contain; padding:10px;">`
+      : icon;
+
+    return `
+      <div class="product-card reveal">
+        <div class="product-card-top" style="background:${cardColor}; display:flex; align-items:center; justify-content:center;">
+          ${mediaContent}
+        </div>
+        <div class="product-card-body">
+          <h3 class="product-name">${p.name}</h3>
+          <p class="product-desc">${p.desc}</p>
+          <div class="product-tags">
+            ${p.tags.map(t => `<span class="tag-chip">${t}</span>`).join('')}
+          </div>
+          <button class="btn-quote js-product-quote" data-product="${p.name} — ${data.name}">
+            Request Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  /* wire up per-product quote buttons */
+  grid.querySelectorAll('.js-product-quote').forEach(btn =>
+    btn.addEventListener('click', () => openModal(btn.dataset.product))
+  );
+
+  /* animate new cards */
+  grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* ── 9. Fetch & bootstrap ──────────────────────────────────────── */
+if (!brandId) {
+  renderError('No brand specified. <a href="categories.html" style="color:var(--green)">Browse categories →</a>');
+} else {
+  fetch('/data/catalog.json')
+    .then(r => {
+      if (!r.ok) throw new Error('Could not load catalog data.');
+      return r.json();
+    })
+    .then(catalog => {
+      let brand = null;
+      let parentCat = null;
+      for (const cat of catalog.categories) {
+        if (catId && cat.id !== catId) continue;
+        const found = cat.brands.find(b => b.id === brandId);
+        if (found) { brand = found; parentCat = cat; break; }
+      }
+      if (!brand) throw new Error('Brand "' + brandId + '" not found.');
+      return {
+        id:          brand.id,
+        name:        brand.name,
+        description: brand.description,
+        logo:        brand.logo,
+        category:    { id: parentCat.id, name: parentCat.name, color: parentCat.color },
+        products:    brand.products,
+      };
+    })
+    .then(renderBrand)
+    .catch(err => renderError(err.message));
+}
+</script>
+</body>
+</html>
