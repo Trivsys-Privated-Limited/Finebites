@@ -25,10 +25,10 @@
           "description": "Premium biscuit brand with a rich heritage in South Asia.",
           "logo": "PF",
           "products": [
-            { "id": "sooper", "name": "Sooper", "desc": "The original glucose biscuit — generations of trust.", "tags": ["Halal", "Bulk Available"] },
-            { "id": "peanut-pik", "name": "Peanut Pik", "desc": "Crunchy peanut biscuit with real peanut pieces.", "tags": ["Halal", "Bulk Available"] },
-            { "id": "cocomo", "name": "Cocomo", "desc": "Chocolate sandwich biscuit with cocoa cream.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
-            { "id": "shortake", "name": "ShortCake", "desc": "Buttery shortcake biscuit, classic teatime choice.", "tags": ["Halal", "Bulk Available"] }
+            { "id": "sooper", "name": "Sooper", "desc": "The original glucose biscuit — generations of trust.", "tags": ["Halal", "Bulk Available"], "image": "/images/peak-freans-product/sooper.jpg" },
+            { "id": "peanut-pik", "name": "Peanut Pik", "desc": "Crunchy peanut biscuit with real peanut pieces.", "tags": ["Halal", "Bulk Available"],  "image": "/images/peak-freans-product/Peanut-pik.png" },
+            { "id": "cocomo", "name": "Cocomo", "desc": "Chocolate sandwich biscuit with cocoa cream.", "tags": ["Halal", "Bulk Available", "Gift Ready"],  "image": "/images/peak-freans-product/chocolious.jpg" },
+            { "id": "shortake", "name": "ShortCake", "desc": "Buttery shortcake biscuit, classic teatime choice.", "tags": ["Halal", "Bulk Available"],  "image": "/images/peak-freans-product/short-cake.jpg" }
           ]
         },
         {
@@ -37,9 +37,9 @@
           "description": "Modern biscuit brand loved for bold flavours.",
           "logo": "BC",
           "products": [
-            { "id": "chocolate-chip", "name": "Chocolate Chip Cookies", "desc": "Soft-baked with Belgian chocolate chips.", "tags": ["Halal", "Bulk Available"] },
-            { "id": "choco-leibniz", "name": "Choco Fills", "desc": "Biscuit with rich chocolate cream filling.", "tags": ["Halal", "Bulk Available", "Gift Ready"] },
-            { "id": "digestive", "name": "Digestive Oat", "desc": "Wholesome oat biscuit with honey sweetness.", "tags": ["Halal", "Bulk Available"] }
+            { "id": "chocolate-chip", "name": "Chocolate Chip Cookies", "desc": "Soft-baked with Belgian chocolate chips.", "tags": ["Halal", "Bulk Available"], "image": "/images/bisconni-product/choco-chip.jpg" },
+            { "id": "choco-leibniz", "name": "Chocolatto", "desc": "Biscuit with rich chocolate cream filling.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "/images/bisconni-product/chocolatto.webp" },
+            { "id": "digestive", "name": "Digestive", "desc": "Wholesome oat biscuit with honey sweetness.", "tags": ["Halal", "Bulk Available"], "image": "/images/bisconni-product/digestive.webp" }
           ]
         }
       ]
