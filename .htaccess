@@ -1,0 +1,33 @@
+# FineBites static site — Apache/LiteSpeed config for Hostinger shared hosting.
+# Upload the contents of this folder directly into public_html (site root),
+# not into a subfolder — pages fetch /data/catalog.json using a root-relative path.
+
+DirectoryIndex index.html
+
+# Correct MIME types (some default Hostinger configs miss modern image/font formats)
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType application/json .json
+  AddType font/woff2 .woff2
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# Browser caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/avif "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/json "access plus 1 hour"
+</IfModule>
