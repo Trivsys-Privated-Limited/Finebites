@@ -123,7 +123,7 @@ const server = http.createServer((req, res) => {
   }
 
   /* ── static files ───────────────────────────────────────────── */
-  let filePath = path.join(ROOT, urlPath === '/' ? 'index.html' : urlPath);
+  let filePath = path.join(ROOT, urlPath === '/' ? 'coming-soon.html' : urlPath);
 
   // security: prevent path traversal
   if (!filePath.startsWith(ROOT)) {
@@ -132,7 +132,7 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (!err && stats.isDirectory()) {
-      filePath = path.join(filePath, 'index.html');
+      filePath = path.join(filePath, 'coming-soon.html');
     }
     sendFile(res, filePath);
   });
