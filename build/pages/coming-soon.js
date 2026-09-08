@@ -1,0 +1,113 @@
+function buildComingSoonHTML() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon — FineBites</title>
+<meta name="description" content="FineBites — Premium Wholesale Confectionery, UAE. Something sweet is on the way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1B5E20;
+  --green-dark:#123E15;
+  --gold:#B8860B;
+  --cream:#FDF8F0;
+  --ink:#1A0A00;
+  --border:rgba(0,0,0,0.08);
+  --text:#241F1A;
+  --text-muted:#6B6258;
+  --ease-enter: cubic-bezier(0.16,1,0.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+}
+a{color:inherit;text-decoration:none;}
+.bg-glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;z-index:0;}
+.bg-glow.one{width:520px;height:520px;background:var(--green);top:-180px;left:-160px;}
+.bg-glow.two{width:480px;height:480px;background:var(--gold);bottom:-200px;right:-160px;opacity:.22;}
+.card{
+  position:relative;
+  z-index:1;
+  max-width:600px;
+  width:100%;
+  text-align:center;
+  padding:64px 44px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:0 30px 60px rgba(26,10,0,0.08);
+}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:36px;}
+.logo svg{width:26px;height:26px;color:var(--green);flex-shrink:0;}
+.logo .fine{color:var(--green);}
+.logo .bites{color:var(--gold);}
+.label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:16px;}
+h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2rem,5vw,3rem);color:var(--ink);line-height:1.15;margin-bottom:18px;}
+p.sub{font-size:16px;color:var(--text-muted);line-height:1.7;max-width:440px;margin:0 auto 36px;}
+.divider{width:56px;height:2px;background:var(--gold);margin:0 auto 36px;border-radius:2px;}
+.contact-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:15px;
+  font-weight:500;
+  color:var(--ink);
+  padding:14px 22px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--cream);
+  transition:background .2s var(--ease-enter), border-color .2s var(--ease-enter), transform .12s var(--ease-enter);
+  margin:0 auto;
+  max-width:fit-content;
+}
+.contact-row:hover{background:#fff;border-color:var(--green);transform:translateY(-1px);}
+.contact-row svg{width:18px;height:18px;color:var(--green);flex-shrink:0;}
+.footer-note{margin-top:36px;font-size:13px;color:var(--text-muted);letter-spacing:.2px;}
+@media (max-width:480px){
+  .card{padding:48px 26px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow one"></div>
+<div class="bg-glow two"></div>
+
+<div class="card">
+  <a href="index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg><span><span class="fine">FINE</span><span class="bites">BiTES</span></span></a>
+
+  <span class="label">Coming Soon</span>
+  <h1>Something Sweet<br>Is On The Way</h1>
+  <p class="sub">We're preparing a new experience for you. In the meantime, reach out to us for wholesale enquiries and orders.</p>
+
+  <div class="divider"></div>
+
+  <a class="contact-row" href="mailto:info@finebitesllc.com">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+    info@finebitesllc.com
+  </a>
+
+  <div class="footer-note">&copy; <span id="year"></span> FineBites. All rights reserved.</div>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+`;
+}
+
+module.exports = { buildComingSoonHTML };

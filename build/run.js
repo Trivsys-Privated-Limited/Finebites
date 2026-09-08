@@ -8,10 +8,12 @@ const { buildIndexHTML } = require('./pages/index');
 const { buildAboutHTML } = require('./pages/about');
 const { buildContactHTML } = require('./pages/contact');
 const { buildCategoryHTML } = require('./pages/category');
+const { buildComingSoonHTML } = require('./pages/coming-soon');
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), buildIndexHTML());
 fs.writeFileSync(path.join(ROOT, 'about.html'), buildAboutHTML());
 fs.writeFileSync(path.join(ROOT, 'contact.html'), buildContactHTML());
+fs.writeFileSync(path.join(ROOT, 'coming-soon.html'), buildComingSoonHTML());
 
 const catDir = path.join(ROOT, 'category');
 fs.mkdirSync(catDir, { recursive: true });
@@ -19,4 +21,4 @@ CATEGORIES.forEach(cat => {
   fs.writeFileSync(path.join(catDir, cat.slug + '.html'), buildCategoryHTML(cat));
 });
 
-console.log('Generated: index.html, about.html, contact.html, and ' + CATEGORIES.length + ' category pages.');
+console.log('Generated: index.html, about.html, contact.html, coming-soon.html, and ' + CATEGORIES.length + ' category pages.');
