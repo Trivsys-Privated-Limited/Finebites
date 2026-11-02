@@ -215,3 +215,90 @@ a.product-name-link:hover .product-name{color:var(--rasp);}
   .gold-text,.cta-banner,.zz-visual svg{animation:none !important;}
   .btn::before{display:none;}
 }
+
+/* =====================================================================
+   MOBILE / RESPONSIVE
+   ===================================================================== */
+@media (max-width:980px){
+  /* category page: compact sidebar becomes a scrollable category bar */
+  .products-layout{grid-template-columns:minmax(0,1fr) !important;gap:22px;padding-top:16px;}
+  .products-layout > *,.prod-sidebar{min-width:0;}
+  .prod-sidebar{padding:18px;box-shadow:4px 4px 0 var(--plum);}
+  .prod-sidebar .sidebar-logo-badge,.prod-sidebar > p,.prod-sidebar .back-link{display:none;}
+  .prod-sidebar h4{font-size:1.25rem;}
+  .side-cats{flex-direction:row;overflow-x:auto;gap:8px;margin-top:14px;padding:14px 2px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .side-cats::-webkit-scrollbar{display:none;}
+  .side-cats li{flex-shrink:0;}
+  .side-cats a{gap:8px;padding:8px 14px;border:2px solid var(--plum);border-radius:999px;background:#fff;white-space:nowrap;}
+  .side-cats a span{opacity:.7;}
+}
+@media (max-width:768px){
+  .page-hero{padding:128px 0 56px;}
+  .brand-hero{padding:128px 0 56px;}
+  .brand-hero.pd-hero{padding:112px 0 30px;}
+  .page-hero h1,.brand-hero h1,.cat-hero h1{font-size:clamp(2.1rem,9vw,2.8rem);}
+  .page-hero p,.brand-hero p,.cat-hero p{font-size:15.5px;}
+  .label{letter-spacing:2px;font-size:11px;}
+  .breadcrumb{padding:16px 0;font-size:12.5px;}
+
+  /* sections breathe less on phones */
+  .zigzag-section,.values,.team{padding:64px 0;}
+  .cta-banner{padding:70px 0 !important;}
+  .cats-section{padding:40px 0 80px;}
+  .contact-section{padding:44px 0 80px;}
+  .products-section{padding-bottom:80px;}
+
+  /* product detail */
+  .pd{gap:24px;padding-bottom:50px;}
+  .pd-main{aspect-ratio:auto;min-height:0;box-shadow:8px 8px 0 var(--royal);}
+  .pd-main img{height:auto;max-height:70vh;}
+  .pd-ctas{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .pd-ctas > :first-child{grid-column:1/-1;}
+  .pd-ctas > *{justify-content:center;padding-left:12px;padding-right:12px;}
+  .pd-table td:first-child{width:36%;}
+  .related{padding:48px 0 64px;}
+  .related h3{font-size:1.5rem;margin-bottom:18px;}
+  .rel-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .rel-card{border-radius:16px;}
+  .rel-card .t{padding:10px 12px;font-size:.92rem;line-height:1.25;}
+  .rel-card .t small{font-size:11px;}
+
+  /* forms: tighter vertical rhythm */
+  .form-grid{gap:0;}
+  .form-field{margin-bottom:12px;gap:5px;}
+  .field-error{min-height:0;}
+  .contact-form-card{padding:28px 20px;border-radius:20px;}
+  .contact-form-card h3{font-size:1.35rem;}
+  .contact-details{gap:20px;}
+
+  /* footer: 2-column link lists instead of one long stack */
+  .footer{padding-top:56px;}
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:34px 20px;padding-bottom:40px;}
+  .footer-grid > div:first-child,.footer-grid > div:last-child{grid-column:1/-1;}
+  .footer ul{gap:10px;}
+}
+@media (max-width:600px){
+  /* nav: logo + menu only; "Request a Quote" lives in the menu */
+  .nav{padding:16px 0;}
+  .nav.scrolled{padding:12px 0;}
+  .nav-cta .btn-primary{display:none;}
+  .logo{font-size:20px;}
+
+  /* category grid: 2 compact cards per row */
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .product-card{border-radius:16px;box-shadow:3px 3px 0 var(--plum);}
+  .product-card-top{height:150px !important;}
+  .product-card-body{padding:12px;gap:6px;}
+  .product-name{font-size:.95rem;line-height:1.25;}
+  .product-card .product-desc,.product-card .product-tags,.product-card .variant-chips,.zoom-hint{display:none;}
+  .variant-label{font-size:10px;letter-spacing:.5px;}
+  .card-actions{flex-direction:column;align-items:stretch;gap:8px;margin-top:auto;}
+  .card-actions .btn-quote{justify-content:center;padding:8px 10px;font-size:12px;box-shadow:2px 2px 0 var(--plum);}
+  .card-actions .btn-details{justify-content:center;font-size:12px;}
+
+  /* about visuals */
+  .zz-visual{box-shadow:8px 8px 0 var(--royal);}
+  .zigzag.reverse .zz-visual{box-shadow:8px 8px 0 var(--rasp);}
+  .values-grid{gap:16px;}
+  .value-card{padding:24px 20px;}
+}

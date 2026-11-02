@@ -25,6 +25,7 @@
 <meta name="twitter:image" content="https://finebitesllc.com/images/og-image.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","WholesaleStore"],"@id":"https://finebitesllc.com/#org","name":"FineBites","legalName":"Fine Bites LLC","url":"https://finebitesllc.com/","logo":"https://finebitesllc.com/images/apple-touch-icon.png","image":"https://finebitesllc.com/images/og-image.jpg","email":"info@finebitesllc.com","telephone":"+971527097123","description":"UAE wholesale confectionery supplier of Saara chocolates, biscuits, lollipops, candy, toffees, gummies and wafers.","address":{"@type":"PostalAddress","streetAddress":"Office 103, 1st Floor, Al Ras 112 Building, Al Ras","addressLocality":"Deira, Dubai","addressRegion":"Dubai","addressCountry":"AE"},"areaServed":["AE","SA","KW","QA","BH","OM"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"18:00"}],"contactPoint":[{"@type":"ContactPoint","telephone":"+971527097123","contactType":"sales","areaServed":"AE","availableLanguage":["en","ar"]}]},{"@type":"WebSite","@id":"https://finebitesllc.com/#website","url":"https://finebitesllc.com/","name":"FineBites","publisher":{"@id":"https://finebitesllc.com/#org"},"inLanguage":"en"}]}</script>
 <!--SEO:END-->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -613,11 +614,22 @@ body.home{background:#FFF8EC;color:#2A1406;}
   .home .marquee-track span{font-size:19px;}
   .home .cat-tile,.home .why-card{box-shadow:4px 4px 0 var(--plum);}
 }
+/* ---------- mobile polish ---------- */
+@media (max-width:768px){
+  .home .footer-grid{grid-template-columns:1fr 1fr !important;gap:34px 20px;padding-bottom:40px;}
+  .home .footer-grid > div:first-child,.home .footer-grid > div:last-child{grid-column:1/-1;}
+  .home .hero-eyebrow{font-size:10.5px;letter-spacing:1px;padding:7px 14px;}
+}
+@media (max-width:600px){
+  .home .nav-cta .btn-primary{display:none;}
+  .home .logo{font-size:20px;}
+}
 @media (prefers-reduced-motion:reduce){
   .gold-text,.home .hero-bg span,.home .hv-sticker,.home .hero-eyebrow .dot,.home .story-img-wrap::before,.home .story-img-wrap::after,.home .cta-banner,.hero-scroll::after,.home .marquee-track{animation:none !important;}
   .home .btn::before{display:none;}
 }
 </style>
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body class="home">
 
@@ -1269,5 +1281,6 @@ window.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 <script src="js/fb-forms.js"></script>
+<script src="js/menu.js"></script>
 </body>
 </html>
