@@ -8,7 +8,7 @@
 <!--SEO:START-->
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://finebitesllc.com/about.html">
-<meta name="theme-color" content="#FF4F79">
+<meta name="theme-color" content="#1C0721">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
@@ -28,7 +28,7 @@
 <!--SEO:END-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --green:#1B5E20;
@@ -216,7 +216,32 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
 @media (max-width:480px){
   .values-grid{grid-template-columns:1fr;}
 }
+/* about: real product photography */
+.page-hero .wrap{position:relative;}
+.about-hero-visual{position:absolute;right:32px;top:50%;width:400px;height:330px;transform:translateY(-50%);pointer-events:none;}
+.about-hero-visual img{position:absolute;width:200px;height:auto;aspect-ratio:903/1200;object-fit:cover;border-radius:22px;border:5px solid var(--royal,#FFB800);box-shadow:0 30px 60px -20px rgba(0,0,0,.8);}
+.about-hero-visual .ahv-1{right:170px;top:-10px;transform:rotate(-8deg);animation:ahvFloat 6s ease-in-out infinite;}
+.about-hero-visual .ahv-2{right:0;top:30px;transform:rotate(7deg);border-color:var(--rasp,#E0144C);animation:ahvFloat 7s ease-in-out infinite reverse;}
+@keyframes ahvFloat{0%,100%{translate:0 0;}50%{translate:0 -14px;}}
+.zz-visual.zz-photo,.zz-visual.zz-fan{overflow:visible;}
+.zz-photo .zz-main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:20px;z-index:1;}
+.zz-photo .zz-float{position:absolute;left:-28px;bottom:-34px;width:34%;z-index:2;border-radius:16px;overflow:hidden;border:4px solid var(--plum,#1C0721);box-shadow:6px 6px 0 var(--royal,#FFB800);transform:rotate(-6deg);background:#fff;}
+.zz-photo .zz-float img{width:100%;height:auto;display:block;}
+.zz-fan{display:flex;align-items:center;justify-content:center;}
+.zz-fan img{position:relative;z-index:1;width:36%;height:auto;aspect-ratio:903/1200;object-fit:cover;border-radius:16px;border:4px solid #fff;box-shadow:0 20px 40px -15px rgba(0,0,0,.7);transition:transform .35s cubic-bezier(.16,1,.3,1);}
+.zz-fan img:nth-child(1){transform:rotate(-10deg) translate(28%,6%);}
+.zz-fan img:nth-child(2){transform:translateY(-4%) scale(1.08);z-index:2;}
+.zz-fan img:nth-child(3){transform:rotate(10deg) translate(-28%,6%);}
+.zz-fan:hover img:nth-child(1){transform:rotate(-14deg) translate(18%,4%);}
+.zz-fan:hover img:nth-child(3){transform:rotate(14deg) translate(-18%,4%);}
+.zz-badge{position:absolute;right:-18px;top:-18px;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;width:104px;height:104px;border-radius:50%;background:var(--royal,#FFB800);color:var(--plum,#1C0721);border:3px solid var(--plum,#1C0721);font-size:11px;font-weight:700;text-align:center;line-height:1.2;transform:rotate(8deg);box-shadow:4px 4px 0 var(--plum,#1C0721);}
+.zz-badge b{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;}
+.zz-photo::before,.zz-fan::before{border-radius:20px;}
+@media (max-width:1100px){.about-hero-visual{display:none;}}
+@media (max-width:600px){.zz-photo .zz-float{left:-10px;bottom:-20px;}.zz-badge{right:-6px;top:-14px;width:84px;height:84px;font-size:10px;}.zz-badge b{font-size:1.1rem;}}
+@media (prefers-reduced-motion:reduce){.about-hero-visual img{animation:none;}}
 </style>
+<link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
 
@@ -256,6 +281,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
     <span class="label">About FineBites</span>
     <h1>Confectionery built for the UAE's wholesale shelf.</h1>
     <p>We supply distributors, supermarkets and bakeries across the UAE and wider Gulf — with a catalogue built around consistency, not novelty.</p>
+    <div class="about-hero-visual" aria-hidden="true">
+      <img class="ahv-1" src="images/saara/pop-fine-xl.webp" alt="" width="903" height="1200" fetchpriority="high">
+      <img class="ahv-2" src="images/saara/fruit-bon-bon.webp" alt="" width="903" height="1200">
+    </div>
   </div>
 </header>
 
@@ -273,7 +302,11 @@ Loved Across the Region.</h2>
         <li><span class="zz-dot"></span>Packaging built around carton and pallet efficiency</li>
       </ul>
     </div>
-    <div class="zz-visual reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg></div>
+    <div class="zz-visual zz-photo reveal">
+      <img class="zz-main" src="images/saara/assortment.webp" alt="Assortment of Saara chocolates, lollipops and biscuits supplied by FineBites" loading="lazy" width="1200" height="798">
+      <div class="zz-float"><img src="images/saara/premium-truffle.webp" alt="Saara Premium Truffle chocolates" loading="lazy" width="903" height="1200"></div>
+      <span class="zz-badge"><b>Dubai</b>Al Ras, Deira</span>
+    </div>
   </div>
 </section>
 
@@ -291,7 +324,12 @@ Repeat Ordering.</h2>
         <li><span class="zz-dot"></span>Lead times confirmed before dispatch, not after</li>
       </ul>
     </div>
-    <div class="zz-visual reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 8l9-5 9 5M7 8v13M17 8v13"/></svg></div>
+    <div class="zz-visual zz-fan reveal">
+      <img src="images/saara/creamfist.webp" alt="Saara Creamfist cream biscuits" loading="lazy" width="901" height="1200">
+      <img src="images/saara/big-bom-xl.webp" alt="Saara Big Bom XL lollipops" loading="lazy" width="903" height="1200">
+      <img src="images/saara/eclairs-toffee.webp" alt="Saara Eclairs toffee" loading="lazy" width="903" height="1200">
+      <span class="zz-badge"><b>100%</b>Halal certified</span>
+    </div>
   </div>
 </section>
 
@@ -550,5 +588,6 @@ document.querySelectorAll('.reveal').forEach(function(el){
 });
 </script>
 <script src="js/fb-forms.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
