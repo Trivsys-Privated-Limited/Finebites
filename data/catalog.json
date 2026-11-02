@@ -1,284 +1,1088 @@
 {
   "categories": [
     {
-      "id": "biscuits",
-      "name": "Biscuits",
-      "description": "Butter crunch classics to tahini-infused UAE originals.",
-      "color": "#2C1A0E",
-      "brands": [
-        {
-          "id": "lu",
-          "name": "LU",
-          "description": "Pakistan's most iconic biscuit brand since 1966.",
-          "logo": "LU",
-          "products": [
-            { "id": "tuc", "name": "TUC", "desc": "Light, crispy salted crackers — perfect snacking biscuit.", "tags": ["Halal", "Bulk Available"], "image": "/images/lu-product/tuc-biscuit.webp" },
-            { "id": "prince", "name": "Prince Chocolate", "desc": "Chocolate-filled sandwich biscuit, a crowd favourite.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "/images/lu-product/prince-chocolate-biscuit.webp" },
-            { "id": "rio", "name": "Rio", "desc": "Vanilla cream filled sandwich biscuit.", "tags": ["Halal", "Bulk Available"], "image": "/images/lu-product/rio-biscuit.jpg" },
-            { "id": "bakeri", "name": "LU Bakeri", "desc": "Classic glucose biscuit, light and crispy.", "tags": ["Halal", "Bulk Available"], "image": "/images/lu-product/bakeri-biscuit.webp" },
-            { "id": "zeera-plus", "name": "Zeera Plus", "desc": "Cumin-flavoured savoury biscuit, unique regional taste.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "/images/lu-product/zeera-plus-biscuit.webp" }
-          ]
-        },
-        {
-          "id": "peak-freans",
-          "name": "Peak Freans",
-          "description": "Premium biscuit brand with a rich heritage in South Asia.",
-          "logo": "PF",
-          "products": [
-            { "id": "sooper", "name": "Sooper", "desc": "The original glucose biscuit — generations of trust.", "tags": ["Halal", "Bulk Available"], "image": "/images/peak-freans-product/sooper.jpg" },
-            { "id": "peanut-pik", "name": "Peanut Pik", "desc": "Crunchy peanut biscuit with real peanut pieces.", "tags": ["Halal", "Bulk Available"],  "image": "/images/peak-freans-product/Peanut-pik.png" },
-            { "id": "cocomo", "name": "Cocomo", "desc": "Chocolate sandwich biscuit with cocoa cream.", "tags": ["Halal", "Bulk Available", "Gift Ready"],  "image": "/images/peak-freans-product/chocolious.jpg" },
-            { "id": "shortake", "name": "ShortCake", "desc": "Buttery shortcake biscuit, classic teatime choice.", "tags": ["Halal", "Bulk Available"],  "image": "/images/peak-freans-product/short-cake.jpg" }
-          ]
-        },
-        {
-          "id": "bisconni",
-          "name": "Bisconni",
-          "description": "Modern biscuit brand loved for bold flavours.",
-          "logo": "BC",
-          "products": [
-            { "id": "chocolate-chip", "name": "Chocolate Chip Cookies", "desc": "Soft-baked with Belgian chocolate chips.", "tags": ["Halal", "Bulk Available"], "image": "/images/bisconni-product/choco-chip.jpg" },
-            { "id": "choco-leibniz", "name": "Chocolatto", "desc": "Biscuit with rich chocolate cream filling.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "/images/bisconni-product/chocolatto.webp" },
-            { "id": "digestive", "name": "Digestive", "desc": "Wholesome oat biscuit with honey sweetness.", "tags": ["Halal", "Bulk Available"], "image": "/images/bisconni-product/digestive.webp" }
-          ]
-        }
-      ]
-    },
-    {
       "id": "chocolates",
       "name": "Chocolates",
-      "description": "Belgian-sourced lines, dates & almond specialities, white bark.",
+      "description": "Truffles, centre-filled chocolates, chocolate beans and fun kids’ treats.",
       "color": "#1A0A00",
       "brands": [
         {
-          "id": "candyland",
-          "name": "Candyland",
-          "description": "Pakistan's leading confectionery brand with premium chocolate lines.",
-          "logo": "CL",
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
           "products": [
-            { "id": "now", "name": "Now", "desc": "Caramel and chocolate bar — a classic for decades.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/chocolate-product/candy-land-now-chocolate.webp" },
-            { "id": "bisca", "name": "Bisca", "desc": "Chocolate coated biscuit bar with caramel.", "tags": ["Halal", "Bulk Available"], "image": "images/chocolate-product/candyland-bisca-chocolate.png" },
-            { "id": "you", "name": "You", "desc": "smooth Creamist milk chocolate.", "tags": ["Halal", "Bulk Available"], "image": "images/chocolate-product/candyland-you-chocolate.jpeg" }
-          ]
-        },
-        {
-          "id": "cadbury",
-          "name": "Cadbury",
-          "description": "Renowned for premium confectionery across the Gulf.",
-          "logo": " CD",
-          "products": [
-            { "id": "dairy-milk", "name": "Dairy Milk", "desc": "Rich milk chocolate bar with hazelnut filling.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/chocolate-product/cadbury-hazulnut.avif" },
-            { "id": "roasted-almond", "name": "Roasted Almond", "desc": "Creamy white chocolate bark with almond crunch.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/chocolate-product/roasted-almond-cadbury.png" },
-            { "id": "chrunchie", "name": "Chrunchie", "desc": "UAE-inspired — Chrunchie in dark chocolate.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/chocolate-product/chrunchie-cadbury.webp" }
+            {
+              "id": "saara-premium-truffle",
+              "name": "Premium Truffle",
+              "desc": "Centre-filled chocolate & caramel truffles in a premium pouch.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/premium-truffle.webp"
+            },
+            {
+              "id": "saara-rich-creme-pleasure-choco",
+              "name": "Rich Creme Pleasure Choco",
+              "desc": "Smooth chocolate outside, rich creamy filling inside.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/rich-creme-pleasure-choco.webp",
+              "variants": [
+                "Hazelnut",
+                "Caramel",
+                "Vanilla"
+              ],
+              "details": [
+                "Smooth chocolate outside, rich creamy inside"
+              ]
+            },
+            {
+              "id": "saara-rich-creme-pleasure-coco",
+              "name": "Rich Creme Pleasure Coco",
+              "desc": "Coconut cream-filled chocolates in gift boxes.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/rich-creme-pleasure-coco.webp"
+            },
+            {
+              "id": "saara-velora",
+              "name": "Velora",
+              "desc": "Chocolates with a strawberry cream filling.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/velora.webp"
+            },
+            {
+              "id": "saara-chocorelle",
+              "name": "Chocorelle",
+              "desc": "Centre-filled chocolate truffles.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/chocorelle.webp"
+            },
+            {
+              "id": "saara-cocovelle",
+              "name": "Cocovelle",
+              "desc": "Caribbean-style coconut cream-filled chocolates.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/cocovelle.webp"
+            },
+            {
+              "id": "saara-chocoza",
+              "name": "Chocoza",
+              "desc": "Centre-filled truffles with a cocoa-rich shell.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/chocoza.webp"
+            },
+            {
+              "id": "saara-choko-darkx",
+              "name": "Choko DarkX",
+              "desc": "Dark chocolate with a creamy chocolate fill.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/choko-darkx.webp"
+            },
+            {
+              "id": "saara-heart-double-flavoured",
+              "name": "Heart Double Flavoured",
+              "desc": "Assorted premium heart-shaped truffles.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/heart-double-flavoured.webp"
+            },
+            {
+              "id": "saara-choco-mini-balls",
+              "name": "Choco Mini Balls",
+              "desc": "Bite-size chocolate balls in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-mini-balls.webp"
+            },
+            {
+              "id": "saara-double-choco-mobile",
+              "name": "Double Choco Mobile",
+              "desc": "Two-tone milk & white chocolate, display box.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/double-choco-mobile.webp"
+            },
+            {
+              "id": "saara-double-choco-heart",
+              "name": "Double Choco Heart",
+              "desc": "Heart-shaped double chocolate, display box.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/double-choco-heart.webp"
+            },
+            {
+              "id": "saara-wonder-joy",
+              "name": "Wonder Joy",
+              "desc": "Chocolate with biscuits and a surprise gift inside.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/wonder-joy.webp"
+            },
+            {
+              "id": "saara-love-heart-chocolate-beans",
+              "name": "Love Heart Chocolate Beans",
+              "desc": "Colourful chocolate beans in a heart-shaped pack.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/love-heart-chocolate-beans.webp"
+            },
+            {
+              "id": "saara-super-dream",
+              "name": "Super Dream",
+              "desc": "Colourful chocolate beans. More chocolaty, more fun.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/super-dream.webp",
+              "details": [
+                "24 sheets per box"
+              ]
+            },
+            {
+              "id": "saara-chocolate-bites-mini",
+              "name": "Chocolate Bites Mini",
+              "desc": "Small bites with a real dark chocolate experience.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/chocolate-bites-mini.webp"
+            },
+            {
+              "id": "saara-umbrella",
+              "name": "Umbrella",
+              "desc": "Chocolatey flavour paste with dipping sticks, in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/umbrella-choco-paste.webp"
+            },
+            {
+              "id": "saara-choco-umbrella",
+              "name": "Choco Umbrella",
+              "desc": "Fun umbrella-shaped chocolate cones in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-umbrella.webp"
+            },
+            {
+              "id": "saara-choco-shots",
+              "name": "Choco Shots",
+              "desc": "Biscuit sticks with chocolate paste.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-shots.webp"
+            },
+            {
+              "id": "saara-miss-kiss",
+              "name": "Miss Kiss",
+              "desc": "Toy chocolate with a fun surprise.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/miss-kiss.webp"
+            },
+            {
+              "id": "saara-2-titlee",
+              "name": "2 Titlee",
+              "desc": "3-in-1 butterfly chocolate treat.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/2-titlee.webp"
+            },
+            {
+              "id": "saara-butterfly",
+              "name": "Butterfly",
+              "desc": "3-in-1 cream mix in one pack.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/butterfly.webp",
+              "variants": [
+                "Choco",
+                "Milk",
+                "Strawberry"
+              ],
+              "details": [
+                "3-in-1 flavour pack"
+              ]
+            },
+            {
+              "id": "saara-rock-eat",
+              "name": "Rock-Eat",
+              "desc": "Flavour paste with gems.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/rock-eat.webp"
+            },
+            {
+              "id": "saara-color-watch",
+              "name": "Color Watch",
+              "desc": "4-in-1 funny watch: eat & play.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/color-watch.webp",
+              "details": [
+                "4-in-1: funny watch, eat & play"
+              ]
+            }
           ]
         }
-      ]
+      ],
+      "image": "images/saara/premium-truffle.webp"
+    },
+    {
+      "id": "biscuits",
+      "name": "Biscuits",
+      "description": "Cream biscuits, cookies, Marie, Digestive and more, in many flavours.",
+      "color": "#2C1A0E",
+      "brands": [
+        {
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
+          "products": [
+            {
+              "id": "saara-creamfist",
+              "name": "Creamfist",
+              "desc": "Cream biscuits in six flavours.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/creamfist.webp",
+              "variants": [
+                "Strawberry",
+                "Pineapple",
+                "Orange",
+                "Mango",
+                "Chocolate",
+                "Vanilla"
+              ]
+            },
+            {
+              "id": "saara-tiktok-cream-biscuit",
+              "name": "TikTok Cream Biscuit",
+              "desc": "Sandwich cream biscuit.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/tiktok-cream-biscuit.webp",
+              "variants": [
+                "Chocolate",
+                "Orange",
+                "Mango",
+                "Vanilla",
+                "Strawberry",
+                "Pineapple"
+              ]
+            },
+            {
+              "id": "saara-cream-bite",
+              "name": "Cream Bite",
+              "desc": "Small bites, big taste.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/cream-bite.webp",
+              "variants": [
+                "Orange",
+                "Strawberry",
+                "Chocolate",
+                "Vanilla",
+                "Mango"
+              ]
+            },
+            {
+              "id": "saara-creamy-crunch",
+              "name": "Creamy & Crunch",
+              "desc": "Tasty cream biscuit sticks.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/creamy-and-crunch.webp",
+              "variants": [
+                "Orange",
+                "Vanilla",
+                "Chocolate",
+                "Strawberry"
+              ]
+            },
+            {
+              "id": "saara-cream",
+              "name": "Cream",
+              "desc": "Flavoured cream biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/cream-biscuits.webp",
+              "variants": [
+                "Chocolate",
+                "Vanilla",
+                "Strawberry",
+                "Coconut",
+                "Orange"
+              ]
+            },
+            {
+              "id": "saara-creams",
+              "name": "Creams",
+              "desc": "Rich cream sandwich biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/creams-vanilla.webp",
+              "variants": [
+                "Vanilla",
+                "Banana",
+                "Strawberry",
+                "Orange",
+                "Chocolate"
+              ]
+            },
+            {
+              "id": "saara-cremella",
+              "name": "Cremella",
+              "desc": "Rich, smooth, delicious creamy biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/cremella.webp",
+              "variants": [
+                "Chocolate",
+                "Vanilla",
+                "Strawberry"
+              ]
+            },
+            {
+              "id": "saara-saara-cookies",
+              "name": "Saara Cookies",
+              "desc": "Rich, buttery cookies.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/cashew-butter-peanut-cookies.webp",
+              "variants": [
+                "Cashew",
+                "Butter",
+                "Peanut"
+              ]
+            },
+            {
+              "id": "saara-digestive",
+              "name": "Digestive",
+              "desc": "Whole wheat wellness biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/digestive.webp",
+              "variants": [
+                "150g",
+                "350g",
+                "540g"
+              ],
+              "details": [
+                "Whole wheat",
+                "High fibre (as stated on pack)",
+                "Pack sizes: 150g, 350g, 540g"
+              ]
+            },
+            {
+              "id": "saara-orico",
+              "name": "Orico",
+              "desc": "Chocolate sandwich biscuit with cream filling.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/orico.webp"
+            },
+            {
+              "id": "saara-bourbon",
+              "name": "Bourbon",
+              "desc": "Chocolate-flavoured cream biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/bourbon.webp"
+            },
+            {
+              "id": "saara-marie",
+              "name": "Marie",
+              "desc": "Classic crisp & crunchy Marie biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/marie.webp"
+            },
+            {
+              "id": "saara-abu-hilawa",
+              "name": "Abu Hilawa",
+              "desc": "Cream biscuits. Extra crunch, rich cream.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/abu-hilawa.webp"
+            },
+            {
+              "id": "saara-malt-n-milk",
+              "name": "Malt 'n Milk",
+              "desc": "Nourishing malt & milk biscuits, 8g x 300 packs.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/malt-n-milk.webp",
+              "details": [
+                "8g x 300 packs"
+              ]
+            },
+            {
+              "id": "saara-glucose",
+              "name": "Glucose",
+              "desc": "Crispy & crunchy glucose biscuits, 25g x 200 packs.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/glucose.webp",
+              "details": [
+                "25g x 200 packs"
+              ]
+            },
+            {
+              "id": "saara-supper-plus",
+              "name": "Supper Plus",
+              "desc": "Egg & milk cookies.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/supper-plus.webp"
+            },
+            {
+              "id": "saara-coconut",
+              "name": "Coconut",
+              "desc": "Coconut biscuits with sugar sprinkles.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/coconut-biscuits.webp"
+            },
+            {
+              "id": "saara-milk-short-cake",
+              "name": "Milk Short Cake",
+              "desc": "Milk short cake biscuits.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/milk-short-cake.webp"
+            },
+            {
+              "id": "saara-royal-bake",
+              "name": "Royal Bake",
+              "desc": "Traditional butter cookies.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/royal-bake.webp"
+            },
+            {
+              "id": "saara-milk-plus",
+              "name": "Milk Plus",
+              "desc": "Milk biscuits. Crunchy bites, creamy delights.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/milk-plus.webp"
+            }
+          ]
+        }
+      ],
+      "image": "images/saara/creamfist.webp"
     },
     {
       "id": "lollipops",
       "name": "Lollipops",
-      "description": "Classics and UAE-exclusive flavours in one wholesale range.",
+      "description": "Pop Fine XL, Big Bom XL, fizzy pops and bubble-gum lollipops.",
       "color": "#1B3A2D",
       "brands": [
         {
-          "id": "chupa-chups",
-          "name": "Chupa Chups",
-          "description": "The world's most iconic lollipop brand.",
-          "logo": "CC",
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
           "products": [
-            { "id": "strawberry-cream", "name": "Strawberry & Cream", "desc": "Classic creamy strawberry swirl.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/lollipop-product/chupa-chups-lollipop.jpg" },
-            { "id": "cola", "name": "Cola", "desc": "Refreshing cola flavour fizz pop.", "tags": ["Halal", "Bulk Available"], "image": "images/lollipop-product/chupa-chups-cola-lollipop.webp" },
-            { "id": "watermelon", "name": "Watermelon", "desc": "Juicy watermelon burst in every lick.", "tags": ["Halal", "Bulk Available"], "image": "images/lollipop-product/chupa-chups-watermelon-lollipop.webp" }
-          ]
-        },
-        {
-          "id": "vidal",
-          "name": "Vidal",
-          "description": "Spanish confectionery brand with bold lollipop range.",
-          "logo": "VD",
-          "products": [
-            { "id": "rainbow-swirl", "name": "Rainbow Swirl Pop", "desc": "Five fruity flavours in one spiral.", "tags": ["Halal", "Bulk Available", "Display Ready"], "image": "images/lollipop-product/vidal-whiral-rainbow-lollipop.webp" },
-            { "id": "sour-mix", "name": "Sour Mix Pop", "desc": "Intense sour coating with sweet candy core.", "tags": ["Halal", "Bulk Available"], "image": "images/lollipop-product/vidal-mega-sour-mix-lollipop.avif" },
-            { "id": "spicy-mango", "name": "Mango Spicy Pop", "desc": "UAE-exclusive — sweet mango with a spicy kick.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/lollipop-product/vidal-spicy-mango-lollipop.webp" }
+            {
+              "id": "saara-pop-fine-xl",
+              "name": "Pop Fine XL",
+              "desc": "Strawberry lollipop with double bubble gum.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/pop-fine-xl.webp",
+              "details": [
+                "50 units per pack",
+                "Double bubble gum centre"
+              ]
+            },
+            {
+              "id": "saara-big-bom-xl",
+              "name": "Big Bom XL",
+              "desc": "Bigger size strawberry lollipop with double bubble gum.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/big-bom-xl.webp",
+              "details": [
+                "8 units per pack",
+                "Double bubble gum centre"
+              ]
+            },
+            {
+              "id": "saara-fizzy-lollipops",
+              "name": "Fizzy Lollipops",
+              "desc": "Soft-drink inspired lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/cola-lollipop.webp",
+              "variants": [
+                {
+                  "name": "Cola",
+                  "image": "images/saara/cola-lollipop.webp"
+                },
+                {
+                  "name": "Funta",
+                  "image": "images/saara/funta-lollipop.webp"
+                },
+                {
+                  "name": "Sprito",
+                  "image": "images/saara/sprito-lollipop.webp"
+                }
+              ]
+            },
+            {
+              "id": "saara-choco-caramel-pop",
+              "name": "Choco Caramel Pop",
+              "desc": "Chocolate caramel lollipop.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-caramel-pop.webp"
+            },
+            {
+              "id": "saara-choco-pops",
+              "name": "Choco Pops",
+              "desc": "Chocolate yogurt pops with a smooth, soft centre.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-pops.webp"
+            },
+            {
+              "id": "saara-creamy-butter-pops",
+              "name": "Creamy Butter Pops",
+              "desc": "Creamy butter lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/creamy-butter-pops.webp"
+            },
+            {
+              "id": "saara-milky-bangz",
+              "name": "Milky Bangz",
+              "desc": "Smooth & cream-filled milky pops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/milky-bangz.webp"
+            },
+            {
+              "id": "saara-iogurte-chupa",
+              "name": "Iogurte Chupa",
+              "desc": "Assorted fruit-flavoured yogurt lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/iogurte-chupa.webp"
+            },
+            {
+              "id": "saara-mix-fruit-fusion-pops",
+              "name": "Mix Fruit Fusion Pops",
+              "desc": "Assorted mixed-fruit lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/mix-fruit-fusion-pops.webp"
+            },
+            {
+              "id": "saara-mix-fruit-lollipop",
+              "name": "Mix Fruit Lollipop",
+              "desc": "Colourful mixed-fruit lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/mix-fruit-lollipop.webp"
+            },
+            {
+              "id": "saara-pop-gum-xxl",
+              "name": "Pop Gum XXL",
+              "desc": "Lollipops with bubble gum inside.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/pop-gum-xxl.webp",
+              "details": [
+                "50 units per pack",
+                "With bubble gum"
+              ]
+            },
+            {
+              "id": "saara-yum-yum-gum",
+              "name": "Yum Yum Gum",
+              "desc": "Bubble gum pops in assorted flavours.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/yum-yum-gum.webp"
+            },
+            {
+              "id": "saara-yogurt-pop",
+              "name": "Yogurt Pop",
+              "desc": "Mix-fruit yogurt lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/yogurt-pop.webp"
+            },
+            {
+              "id": "saara-milko-bingo",
+              "name": "Milko Bingo",
+              "desc": "Milky pop lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/milko-bingo.webp"
+            },
+            {
+              "id": "saara-sweeto-bingo",
+              "name": "Sweeto Bingo",
+              "desc": "Strawberry-flavoured lollipops.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/sweeto-bingo.webp"
+            }
           ]
         }
-      ]
-    },
-    {
-      "id": "gummies",
-      "name": "Gummies",
-      "description": "Bears, rings, worms, and hearts that move fast off shelves.",
-      "color": "#1A2C1A",
-      "brands": [
-        {
-          "id": "haribo",
-          "name": "Haribo",
-          "description": "The world's favourite gummy brand since 1920.",
-          "logo": "HR",
-          "products": [
-            { "id": "goldbears", "name": "Gold Bears", "desc": "The original 5-flavour gummy bears.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/gummies-product/haribo-gold-bears.webp" },
-            { "id": "tangfastics", "name": "Tangfastics", "desc": "Sour-coated mix of gummy shapes.", "tags": ["Halal", "Bulk Available"], "image": "images/gummies-product/haribo-tangfastics.jpg" },
-            { "id": "starmix", "name": "Starmix", "desc": "Hearts, bears, bottles, eggs and rings.", "tags": ["Halal", "Bulk Available"], "image": "images/gummies-product/haribo-starmix.webp" }
-          ]
-        },
-        {
-          "id": "trolli",
-          "name": "Trolli",
-          "description": "Bold, quirky gummies for every retail shelf.",
-          "logo": "TR",
-          "products": [
-            { "id": "sour-worms", "name": "Sour Worms", "desc": "Giant sour worms — sour then sweet.", "tags": ["Halal", "Bulk Available"], "image": "images/gummies-product/trolli-sour-worms.webp" },
-            { "id": "brite-crawlers", "name": "Brite Crawlers", "desc": "Two-tone sour gummy worms.", "tags": ["Halal", "Bulk Available", "Display Ready"], "image": "images/gummies-product/trolli-brite-crawlers.webp" },
-            { "id": "gummy-rings", "name": "Tropical Rings", "desc": "Mango, pineapple, passionfruit gummy rings.", "tags": ["Halal", "Bulk Available"], "image": "images/gummies-product/trolli-tropical-rings.jpg" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "wafers",
-      "name": "Wafers",
-      "description": "Vanilla, chocolate hazelnut, and strawberry crowd-pleasers.",
-      "color": "#2A1A0A",
-      "brands": [
-        {
-          "id": "loacker",
-          "name": "Loacker",
-          "description": "Premium Austrian wafer brand with 100 years of expertise.",
-          "logo": "LK",
-          "products": [
-            { "id": "vanilla", "name": "Vanilla Cream Wafer", "desc": "Crispy layers with smooth vanilla cream.", "tags": ["Halal", "Bulk Available"], "image": "images/waffer-product/vanilla-wafer-loaker.webp" },
-            { "id": "choco", "name": "Chocolate Hazelnut Wafer", "desc": "Rich hazelnut chocolate between crisp wafer layers.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/waffer-product/loaker-hazelnut-wafer.jpg" },
-            { "id": "rasbery", "name": "Raspberry-Yogurt Wafer", "desc": "Light raspberry-yogurt wafer, bestselling flavour.", "tags": ["Halal", "Bulk Available"], "image": "images/waffer-product/loaker-rasbery-waffer.jpg" }
-          ]
-        },
-        {
-          "id": "ulker",
-          "name": "Ulker",
-          "description": "Turkey's leading confectionery brand in the Gulf.",
-          "logo": "UK",
-          "products": [
-            { "id": "rulokat", "name": "Rulokat Finger  Waffer", "desc": "Chocolate-filled inside wafer fingers, individually wrapped.", "tags": ["Halal", "Bulk Available"], "image": "images/waffer-product/rulokat-waffer-ulker.webp" },
-            { "id": "laviva", "name": "Laviva Wafer", "desc": "Caramel and cocoa layered wafer bar.", "tags": ["Halal", "Bulk Available"], "image": "images/waffer-product/laviva-waffer-ulker.webp" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "toffees",
-      "name": "Toffees",
-      "description": "Individually wrapped for gifting, retail, and impulse displays.",
-      "color": "#2A1500",
-      "brands": [
-        {
-          "id": "walkers",
-          "name": "Walker's",
-          "description": "Heritage toffee brand trusted across South Asia & Gulf.",
-          "logo": "WL",
-          "products": [
-            { "id": "original", "name": "Original Toffee", "desc": "Smooth, buttery, individually wrapped in foil.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/toffess-product/walkers-original-toffee.jpg" },
-            { "id": "caramel", "name": "Salted Caramel Toffee", "desc": "Sea salt caramel with addictive finish.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/toffess-product/walker-salted-caramel-toffess.webp" },
-            { "id": "mint-toffee", "name": "Mint Toffee", "desc": "Real arabica coffee baked into rich toffee.", "tags": ["Halal", "Bulk Available"], "image": "images/toffess-product/walker-mint-toffess.avif" }
-          ]
-        },
-        {
-          "id": "werther",
-          "name": "Werther's Original",
-          "description": "Germany's iconic butter candy brand.",
-          "logo": "WO",
-          "products": [
-            { "id": "original", "name": "Original Butter Candies", "desc": "Signature butterscotch hard candy.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/toffess-product/werther-orginal-butter-candies.jpg" },
-            { "id": "chewy-caramel", "name": "Chewy Caramels", "desc": "Soft chewy caramel with butter cream filling.", "tags": ["Halal", "Bulk Available"], "image": "images/toffess-product/werther-orginal-chewy.webp" },
-            { "id": "sugar-free", "name": "Sugar Free Original", "desc": "Classic butterscotch taste, no added sugar.", "tags": ["Halal", "Bulk Available"], "image": "images/toffess-product/werther-original-suger-free-assorted.jpg" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "jelly-beans",
-      "name": "Jelly Beans",
-      "description": "The most colourful aisle section — gift jars and bulk bags.",
-      "color": "#0D1F2D",
-      "brands": [
-        {
-          "id": "jelly-belly",
-          "name": "Jelly Belly",
-          "description": "The world's premium jelly bean brand with 50+ flavours.",
-          "logo": "JB",
-          "products": [
-            { "id": "50-flavours", "name": "50 Official Flavours Mix", "desc": "Gift jars and bulk bags with all 50 official flavours.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/jelly-beans-product/jelly-belly-50-mix.png" },
-            { "id": "tropical", "name": "Tropical Mix", "desc": "Lychee, mango, dragon fruit and guava.", "tags": ["Halal", "Bulk Available"], "image": "images/jelly-beans-product/jelly-belly-tropical-mix.webp" },
-            { "id": "soda-pop", "name": "Soda Pop Shoppe", "desc": "Seven Soda-inspired jelly bean flavours.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/jelly-beans-product/jelly-belly-soda-pop-shoppe.jpg" }
-          ]
-        },
-        {
-          "id": "starburst",
-          "name": "Starburst",
-          "description": "Vibrant fruity jelly beans loved worldwide.",
-          "logo": "SB",
-          "products": [
-            { "id": "original-beans", "name": "Original Jelly Beans", "desc": "Strawberry, cherry, lemon and orange in one bag.", "tags": ["Halal", "Bulk Available"], "image": "images/jelly-beans-product/starburst-original-jelly-beans.avif" },
-            { "id": "sours-beans", "name": "Sours Jelly Beans", "desc": "Sour-coated fruit jelly beans for bold taste.", "tags": ["Halal", "Bulk Available"], "image": "images/jelly-beans-product/starburst-sours-jelly-beans.jpg" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "marshmallows",
-      "name": "Marshmallows",
-      "description": "A gifting staple and hot-drink companion.",
-      "color": "#1A1A2E",
-      "brands": [
-        {
-          "id": "jet-puffed",
-          "name": "Jet-Puffed",
-          "description": "America's most trusted marshmallow brand.",
-          "logo": "JP",
-          "products": [
-            { "id": "mini-marshmallows", "name": "Mini Marshmallows", "desc": "Perfect hot-chocolate and baking companion.", "tags": ["Halal", "Bulk Available"], "image": "images/marshmallows-product/marshmallows.png" },
-            { "id": "vanilla-cloud", "name": "Vanilla Cloud", "desc": "Fluffy standard-size vanilla marshmallows.", "tags": ["Halal", "Bulk Available"], "image": "images/marshmallows-product/jet-puffed-vanilla-cloud.jpg" },
-            { "id": "jumbo", "name": "Jumbo Extra Large", "desc": "XL marshmallows, ideal for gifting and displays.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/marshmallows-product/jet-puffed-extra-large.png" }
-          ]
-        },
-        {
-          "id": "dandies",
-          "name": "Dandies",
-          "description": "Premium artisan marshmallow brand.",
-          "logo": "DN",
-          "products": [
-            { "id": "strawberry-twist", "name": "Strawberry Twist", "desc": "Pink and white twisted marshmallows, gift-friendly.", "tags": ["Halal", "Bulk Available", "Gift Ready"], "image": "images/marshmallows-product/dandies-strawberry-twist.jpg" },
-            { "id": "toasted-coconut", "name": "Toasted Coconut", "desc": "Coconut-dusted marshmallow for premium gifting.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/marshmallows-product/dandies-toasted.webp" }
-          ]
-        }
-      ]
+      ],
+      "image": "images/saara/big-bom-xl.webp"
     },
     {
       "id": "candy",
       "name": "Candy",
-      "description": "Fruit mixes, rose & cardamom, and mint drops with regional taste.",
+      "description": "Fruit bon bons, hard candies, mints and tamarind treats.",
       "color": "#2D1A0A",
       "brands": [
         {
-          "id": "hilal-candy",
-          "name": "Hilal Candies",
-          "description": "UAE-rooted candy brand with regional flavour expertise.",
-          "logo": "HC",
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
           "products": [
-            { "id": "eclairs", "name": "Eclairs", "desc": "Chewy caramel shell wraps around a luscious chocolate center.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/candy-product/hilal-eclair-candy.webp" },
-            { "id": "pan-pasand", "name": "Pan Pasand", "desc": "This candy offers a sweet, aromatic burst with every bite.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/candy-product/hilal-pan-pasand-candy.webp" },
-            { "id": "khopra", "name": "Khopra", "desc": "A rich caramel shell surrounds a luscious coconut center.", "tags": ["Halal", "Bulk Available", "UAE Exclusive"], "image": "images/candy-product/hilal-khopra-candy.png" }
-          ]
-        },
-        {
-          "id": "trebor",
-          "name": "Trebor",
-          "description": "British mint and candy brand with Gulf presence.",
-          "logo": "TB",
-          "products": [
-            { "id": "softmints", "name": "Softmints", "desc": "Soft, chewy peppermint candy — easy to eat.", "tags": ["Halal", "Bulk Available"], "image": "images/candy-product/trebor-softmints-candy.webp" },
-            { "id": "extra-strong", "name": "Extra Strong Mints", "desc": "Intense peppermint hard candy.", "tags": ["Halal", "Bulk Available"], "image": "images/candy-product/trebor-extra-strong-mints-candy.webp" }
+            {
+              "id": "saara-fruit-bon-bon",
+              "name": "Fruit Bon Bon",
+              "desc": "Creamy-filled fruit candy in 4 flavours.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/fruit-bon-bon.webp",
+              "variants": [
+                "Banana",
+                "Orange",
+                "Strawberry",
+                "Mango"
+              ],
+              "details": [
+                "Creamy-filled candy",
+                "4 flavours"
+              ]
+            },
+            {
+              "id": "saara-sweety-hearty",
+              "name": "Sweety Hearty",
+              "desc": "Heart-shaped love candy.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/sweety-hearty.webp",
+              "variants": [
+                "Mixed Fruits",
+                "Tamarind"
+              ]
+            },
+            {
+              "id": "saara-milolly-bon-bon",
+              "name": "Milolly Bon Bon",
+              "desc": "Wrapped bon bons in 4 assorted flavours.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/milolly-bon-bon.webp"
+            },
+            {
+              "id": "saara-lacto-bon-bon",
+              "name": "Lacto Bon Bon",
+              "desc": "Same great taste, always a delight.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/lacto-bon-bon.webp"
+            },
+            {
+              "id": "saara-ukwaju-imli",
+              "name": "Ukwaju Imli",
+              "desc": "Soft tamarind candy.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/ukwaju-imli.webp"
+            },
+            {
+              "id": "saara-orange-ripe",
+              "name": "Orange Ripe",
+              "desc": "Juicy orange-slice hard-boiled confectionery in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/orange-ripe.webp",
+              "details": [
+                "125 pieces per jar"
+              ]
+            },
+            {
+              "id": "saara-green-mango-ripe",
+              "name": "Green Mango Ripe",
+              "desc": "Juicy green-mango hard-boiled confectionery in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/green-mango-ripe.webp",
+              "details": [
+                "125 pieces per jar"
+              ]
+            },
+            {
+              "id": "saara-frutza-xl",
+              "name": "Frutza XL",
+              "desc": "Fruity chew sticks, 6-piece packs.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/frutza-xl-sour-sweet.webp",
+              "variants": [
+                {
+                  "name": "Sour Sweet",
+                  "image": "images/saara/frutza-xl-sour-sweet.webp"
+                },
+                {
+                  "name": "Sweet Spicy",
+                  "image": "images/saara/frutza-xl-sweet-spicy.webp"
+                }
+              ],
+              "details": [
+                "6 pieces per pack"
+              ]
+            },
+            {
+              "id": "saara-happy-mintz",
+              "name": "Happy Mintz",
+              "desc": "Sugar-coated sweet mint.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/happy-mintz.webp",
+              "variants": [
+                {
+                  "name": "Pouch Pack",
+                  "image": "images/saara/happy-mintz.webp"
+                },
+                {
+                  "name": "Jar",
+                  "image": "images/saara/happy-mintz-jar.webp"
+                }
+              ]
+            }
           ]
         }
-      ]
+      ],
+      "image": "images/saara/fruit-bon-bon.webp"
+    },
+    {
+      "id": "toffees",
+      "name": "Toffees",
+      "description": "Eclairs, cream fudge, milk candies and caramels.",
+      "color": "#2A1500",
+      "brands": [
+        {
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
+          "products": [
+            {
+              "id": "saara-eclairs-toffee",
+              "name": "Eclairs Toffee",
+              "desc": "Rich outside, creamy inside.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/eclairs-toffee.webp",
+              "variants": [
+                "Chocolate",
+                "Milk",
+                "Hazelnut",
+                "Honey"
+              ]
+            },
+            {
+              "id": "saara-luxury-cream-fudge",
+              "name": "Luxury Cream Fudge",
+              "desc": "Rich, creamier and tastier cream fudge.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/luxury-cream-fudge.webp",
+              "details": [
+                "40 pieces per pack",
+                "100% Halal (as stated on pack)"
+              ]
+            },
+            {
+              "id": "saara-deluxe-toffee",
+              "name": "Deluxe Toffee",
+              "desc": "Authentic assortment of delicious toffee.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/deluxe-toffee.webp"
+            },
+            {
+              "id": "saara-deluxe-toffees-box",
+              "name": "Deluxe Toffees Box",
+              "desc": "Deluxe toffees in a retail display box.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/deluxe-toffees.webp"
+            },
+            {
+              "id": "saara-veluxe-milk",
+              "name": "Veluxe Milk",
+              "desc": "2-in-1 milk candy with rich milk goodness.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/veluxe-milk.webp"
+            },
+            {
+              "id": "saara-mr-milkie",
+              "name": "Mr. Milkie",
+              "desc": "Milk-flavoured creamy candy.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/mr-milkie.webp"
+            },
+            {
+              "id": "saara-assortment",
+              "name": "Assortment",
+              "desc": "Assorted milk candies in pouch and box.",
+              "tags": [
+                "Bulk Available",
+                "Gift Ready"
+              ],
+              "image": "images/saara/assortment.webp"
+            },
+            {
+              "id": "saara-caramels-original",
+              "name": "Caramels Original",
+              "desc": "Creamy caramel candies, full flavour.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/caramels-original.webp"
+            }
+          ]
+        }
+      ],
+      "image": "images/saara/eclairs-toffee.webp"
+    },
+    {
+      "id": "gummies",
+      "name": "Gummies",
+      "description": "Bubble gum jars and fruit jellies.",
+      "color": "#1A2C1A",
+      "brands": [
+        {
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
+          "products": [
+            {
+              "id": "saara-fresh-olive-bubble-gum",
+              "name": "Fresh Olive Bubble Gum",
+              "desc": "Assorted-flavour bubble gum, jar and 160-piece box.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/fresh-olive-bubble-gum.webp",
+              "variants": [
+                "Strawberry",
+                "Orange",
+                "Green Apple",
+                "Grape",
+                "Lemon"
+              ],
+              "details": [
+                "Available in jar and 160-piece box",
+                "No artificial colours (as stated on pack)",
+                "Long lasting"
+              ]
+            },
+            {
+              "id": "saara-kick-football-play-gum",
+              "name": "Kick Football Play Gum",
+              "desc": "Football bubble gum in a 50-piece jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/kick-football-gum.webp",
+              "details": [
+                "50 pieces per jar"
+              ]
+            },
+            {
+              "id": "saara-water-melon-bubble-gum",
+              "name": "Water Melon Bubble Gum",
+              "desc": "Watermelon bubble gum.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/water-melon-bubble-gum-jar.webp",
+              "variants": [
+                {
+                  "name": "Assorted Jar",
+                  "image": "images/saara/water-melon-bubble-gum-jar.webp"
+                },
+                {
+                  "name": "Bubble Gum Jar",
+                  "image": "images/saara/water-melon-bubble-gum.webp"
+                }
+              ]
+            },
+            {
+              "id": "saara-olivary-bubble-gum",
+              "name": "Olivary Bubble Gum",
+              "desc": "Colourful olive-shaped bubble gum in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/olivary-bubble-gum.webp"
+            },
+            {
+              "id": "saara-frutza-jelly",
+              "name": "Frutza Jelly",
+              "desc": "Fruit jelly in a jar.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/frutza-jelly.webp"
+            },
+            {
+              "id": "saara-frutza-strawberry-jelly",
+              "name": "Frutza Strawberry Jelly",
+              "desc": "Strawberry-flavoured chew jelly.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/frutza-strawberry-jelly.webp"
+            }
+          ]
+        }
+      ],
+      "image": "images/saara/fresh-olive-bubble-gum.webp"
+    },
+    {
+      "id": "wafers",
+      "name": "Wafers",
+      "description": "Crunchy chocolate wafer sticks and filled wafers.",
+      "color": "#2A1A0A",
+      "brands": [
+        {
+          "id": "saara",
+          "name": "Saara",
+          "description": "Saara, Bite of Happiness. Chocolates, candies, lollipops and biscuits supplied in bulk by Fine Bites.",
+          "logo": "S",
+          "products": [
+            {
+              "id": "saara-choco-bites-crunchy",
+              "name": "Choco Bites Crunchy",
+              "desc": "Crunchy chocolate wafer sticks.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-bites.webp"
+            },
+            {
+              "id": "saara-choco-icream",
+              "name": "Choco iCream",
+              "desc": "Choco-filled wafer.",
+              "tags": [
+                "Bulk Available"
+              ],
+              "image": "images/saara/choco-icream.webp"
+            }
+          ]
+        }
+      ],
+      "image": "images/saara/choco-bites.webp"
     }
   ]
 }

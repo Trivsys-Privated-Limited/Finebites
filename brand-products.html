@@ -3,8 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="pageTitle">Brand Products — FineBites</title>
-<meta name="description" content="Browse wholesale products from this brand at FineBites.">
+<title id="pageTitle">Products | FineBites</title>
+<script>/*FB-ROUTE*/(function(){if(window.FB_PRESET)return;var q=new URLSearchParams(location.search),c=q.get("cat");location.replace(c&&/^[a-z0-9-]+$/.test(c)?"category/"+c+".html":"categories.html");})();</script>
+<meta name="description" content="Wholesale Saara products from FineBites.">
+<!--SEO:START-->
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#FF4F79">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta property="og:site_name" content="FineBites">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Products | FineBites">
+<meta property="og:description" content="Wholesale Saara products from FineBites.">
+<meta property="og:image" content="https://finebitesllc.com/images/og-image.jpg">
+<meta property="og:locale" content="en_AE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Products | FineBites">
+<meta name="twitter:description" content="Wholesale Saara products from FineBites.">
+<meta name="twitter:image" content="https://finebitesllc.com/images/og-image.jpg">
+<!--SEO:END-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -163,6 +181,36 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
 .error-state h3{font-size:1.4rem;color:var(--ink);margin-bottom:10px;}
 .error-state p{color:var(--text-muted);font-size:15px;}
 @media(max-width:980px){.products-layout{grid-template-columns:1fr;}.prod-sidebar{position:static;}}
+.product-card-top{height:260px;padding:0;overflow:hidden;cursor:zoom-in;position:relative;}
+.product-card-top img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease;}
+.product-card:hover .product-card-top img{transform:scale(1.03);}
+.zoom-hint{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:4px 8px;border-radius:20px;pointer-events:none;}
+.variant-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);}
+.variant-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.variant-chip{font:inherit;font-size:12px;font-weight:500;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:#fff;color:var(--ink);cursor:pointer;transition:all .15s;}
+.variant-chip:hover{border-color:var(--green);}
+.variant-chip.active{background:var(--green);border-color:var(--green);color:#fff;}
+.side-cats{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:2px;}
+.side-cats a{display:flex;justify-content:space-between;font-size:14px;color:var(--ink);padding:7px 10px;border-radius:7px;}
+.side-cats a:hover{background:var(--cream);color:var(--green);}
+.side-cats a.active{background:var(--green);color:#fff;}
+.side-cats a span{opacity:.6;font-size:12px;}
+.product-card-top{cursor:pointer;}
+a.product-name-link{color:inherit;}
+a.product-name-link:hover .product-name{color:var(--green);}
+.card-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:4px;}
+.btn-details{font-size:13px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:6px;}
+.btn-details:hover{text-decoration:underline;}
+.lightbox{position:fixed;inset:0;background:rgba(10,15,10,.92);display:none;align-items:center;justify-content:center;z-index:3000;padding:24px;flex-direction:column;gap:14px;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:min(1100px,100%);max-height:calc(100vh - 110px);object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.lightbox-cap{color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;text-align:center;}
+.lightbox-close,.lightbox-nav{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;width:46px;height:46px;border-radius:50%;font-size:26px;line-height:1;cursor:pointer;}
+.lightbox-close{top:18px;right:18px;}
+.lightbox-nav.prev{left:18px;top:50%;}
+.lightbox-nav.next{right:18px;top:50%;}
+.lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,.25);}
+@media(max-width:600px){.lightbox-nav{display:none;}.product-card-top{height:230px;}}
 </style>
 </head>
 <body>
@@ -179,15 +227,13 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
       <li class="nav-products">
         <a href="index.html#range">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="chevron"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="mega-dropdown"><div class="mega-grid">
-          <a href="category-brands.html?cat=lollipops">Lollipops</a>
-          <a href="category-brands.html?cat=biscuits">Biscuits</a>
-          <a href="category-brands.html?cat=chocolates">Chocolates</a>
-          <a href="category-brands.html?cat=gummies">Gummies</a>
-          <a href="category-brands.html?cat=wafers">Wafers</a>
-          <a href="category-brands.html?cat=toffees">Toffees</a>
-          <a href="category-brands.html?cat=jelly-beans">Jelly Beans</a>
-          <a href="category-brands.html?cat=marshmallows">Marshmallows</a>
-          <a href="category-brands.html?cat=candy">Candy</a>
+          <a href="category/lollipops.html">Lollipops</a>
+          <a href="category/biscuits.html">Biscuits</a>
+          <a href="category/chocolates.html">Chocolates</a>
+          <a href="category/gummies.html">Gummies</a>
+          <a href="category/wafers.html">Wafers</a>
+          <a href="category/toffees.html">Toffees</a>
+          <a href="category/candy.html">Candy</a>
         </div></div>
       </li>
     <!-- <li><a href="categories.html">Categories</a></li> -->
@@ -204,15 +250,13 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
       <a href="index.html">Home</a>
       <span class="mobile-sub-label">Products</span>
       <div class="mobile-cats">
-        <a href="category-brands.html?cat=lollipops">Lollipops</a>
-        <a href="category-brands.html?cat=biscuits">Biscuits</a>
-        <a href="category-brands.html?cat=chocolates">Chocolates</a>
-        <a href="category-brands.html?cat=gummies">Gummies</a>
-        <a href="category-brands.html?cat=wafers">Wafers</a>
-        <a href="category-brands.html?cat=toffees">Toffees</a>
-        <a href="category-brands.html?cat=jelly-beans">Jelly Beans</a>
-        <a href="category-brands.html?cat=marshmallows">Marshmallows</a>
-        <a href="category-brands.html?cat=candy">Candy</a>
+        <a href="category/lollipops.html">Lollipops</a>
+        <a href="category/biscuits.html">Biscuits</a>
+        <a href="category/chocolates.html">Chocolates</a>
+        <a href="category/gummies.html">Gummies</a>
+        <a href="category/wafers.html">Wafers</a>
+        <a href="category/toffees.html">Toffees</a>
+        <a href="category/candy.html">Candy</a>
       </div>
      <!-- <a href="categories.html">Categories</a> -->
       <a href="about.html">About</a>
@@ -237,7 +281,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="index.html">Home</a><span class="sep">/</span>
   <!--  <a href="categories.html">Categories</a><span class="sep">/</span> -->
-    <a href="#" id="breadcrumbCat">…</a><span class="sep">/</span>
+    <a href="categories.html" id="breadcrumbCat">Products</a><span class="sep">/</span>
     <span class="current" id="breadcrumbBrand">…</span>
   </nav>
 </div>
@@ -253,10 +297,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
       <h4 id="sidebarName">Loading…</h4>
       <p id="sidebarDesc"></p>
       <button class="btn-quote js-open-modal" id="sidebarQuoteBtn">Request a Quote</button>
-      <a href="#" class="back-link" id="backLink">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        Back to brands
-      </a>
+      <ul class="side-cats" id="sideCats"></ul>
     </aside>
 
     <!-- PRODUCT GRID -->
@@ -287,17 +328,15 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
         </ul>
       </div>
       <div><h4>Categories</h4><ul>
-        <li><a href="category-brands.html?cat=lollipops">Lollipops</a></li>
-        <li><a href="category-brands.html?cat=biscuits">Biscuits</a></li>
-        <li><a href="category-brands.html?cat=chocolates">Chocolates</a></li>
-        <li><a href="category-brands.html?cat=gummies">Gummies</a></li>
-        <li><a href="category-brands.html?cat=wafers">Wafers</a></li>
-        <li><a href="category-brands.html?cat=toffees">Toffees</a></li>
-        <li><a href="category-brands.html?cat=jelly-beans">Jelly Beans</a></li>
-        <li><a href="category-brands.html?cat=marshmallows">Marshmallows</a></li>
-        <li><a href="category-brands.html?cat=candy">Candy</a></li>
+        <li><a href="category/lollipops.html">Lollipops</a></li>
+        <li><a href="category/biscuits.html">Biscuits</a></li>
+        <li><a href="category/chocolates.html">Chocolates</a></li>
+        <li><a href="category/gummies.html">Gummies</a></li>
+        <li><a href="category/wafers.html">Wafers</a></li>
+        <li><a href="category/toffees.html">Toffees</a></li>
+        <li><a href="category/candy.html">Candy</a></li>
       </ul></div>
-      <div><h4>Contact</h4><ul><li>Dubai, United Arab Emirates</li><li><button class="js-open-modal">hello@finebites.com</button></li><li><button class="js-open-modal">+971 4 000 0000</button></li></ul></div>
+      <div><h4>Contact</h4><ul><li>Al Ras, Deira, Dubai, UAE</li><li><a href="mailto:info@finebitesllc.com">info@finebitesllc.com</a></li><li><a href="https://wa.me/971527097123" target="_blank" rel="noopener">+971 52 709 7123</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 FineBites. All rights reserved.</span><span>Powered by PBS Digitals</span></div>
   </div>
@@ -312,12 +351,12 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
       <p class="modal-sub">Tell us about your business and what you'd like to stock. We reply within 24 hours.</p>
       <form id="inquiryForm" novalidate>
         <div class="form-grid">
-          <div class="form-field"><label>Full Name <span class="req">*</span></label><input type="text" name="fullName" autocomplete="name"><span class="field-error" data-err="fullName"></span></div>
-          <div class="form-field"><label>Company Name <span class="req">*</span></label><input type="text" name="companyName" autocomplete="organization"><span class="field-error" data-err="companyName"></span></div>
-          <div class="form-field"><label>Email <span class="req">*</span></label><input type="email" name="email" autocomplete="email"><span class="field-error" data-err="email"></span></div>
-          <div class="form-field"><label>Phone / WhatsApp <span class="req">*</span></label><input type="tel" name="phone" autocomplete="tel"><span class="field-error" data-err="phone"></span></div>
-          <div class="form-field full"><label>Product Interest</label><input type="text" name="productInterest" id="productInterestField" placeholder="e.g. TUC Crackers — LU Biscuits"></div>
-          <div class="form-field full"><label>Message</label><textarea name="message" placeholder="Quantity needed, delivery location, etc."></textarea></div>
+          <div class="form-field"><label for="f-fullName-1">Full Name <span class="req">*</span></label><input id="f-fullName-1" type="text" name="fullName" autocomplete="name"><span class="field-error" data-err="fullName"></span></div>
+          <div class="form-field"><label for="f-companyName-2">Company Name <span class="req">*</span></label><input id="f-companyName-2" type="text" name="companyName" autocomplete="organization"><span class="field-error" data-err="companyName"></span></div>
+          <div class="form-field"><label for="f-email-3">Email <span class="req">*</span></label><input id="f-email-3" type="email" name="email" autocomplete="email"><span class="field-error" data-err="email"></span></div>
+          <div class="form-field"><label for="f-phone-4">Phone / WhatsApp <span class="req">*</span></label><input id="f-phone-4" type="tel" name="phone" autocomplete="tel"><span class="field-error" data-err="phone"></span></div>
+          <div class="form-field full"><label for="productInterestField">Product Interest</label><input type="text" name="productInterest" id="productInterestField" placeholder="e.g. Eclairs Toffee (Chocolate) — Saara"></div>
+          <div class="form-field full"><label for="f-message-5">Message</label><textarea id="f-message-5" name="message" placeholder="Quantity needed, delivery location, etc."></textarea></div>
         </div>
         <button type="submit" class="btn btn-primary modal-submit">Send Inquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </form>
@@ -329,11 +368,20 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2
   </div>
 </div>
 
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" alt="">
+  <div class="lightbox-cap" id="lbCap"></div>
+  <button class="lightbox-nav next" id="lbNext" aria-label="Next">&#8250;</button>
+</div>
+
 <script>
 /* ── 1. URL params ─────────────────────────────────────────────── */
 const params  = new URLSearchParams(window.location.search);
-const brandId = params.get('brand');
-const catId   = params.get('cat');
+const PRESET  = window.FB_PRESET || {};
+const brandId = PRESET.brand || params.get('brand');
+const catId   = PRESET.cat || params.get('cat');
 
 /* ── 2. Nav scroll ─────────────────────────────────────────────── */
 const navEl = document.getElementById('nav');
@@ -417,6 +465,40 @@ const CARD_COLORS = {
   'jelly-beans':'#E2F1EF', marshmallows:'#FDEEF0', candy:'#EFE3F1',
 };
 
+/* ── 6b. Lightbox ──────────────────────────────────────────────── */
+const LB = { items: [], pos: 0 };
+const lbEl = document.getElementById('lightbox');
+function lbShow() {
+  const it = LB.items[LB.pos]; if (!it) return;
+  document.getElementById('lbImg').src = it.src;
+  document.getElementById('lbImg').alt = it.cap;
+  document.getElementById('lbCap').textContent = it.cap;
+}
+function openLightbox(i, k) {
+  let pos = LB.items.findIndex(it => it.i === i && it.k === k);
+  if (pos < 0) pos = LB.items.findIndex(it => it.i === i);
+  LB.pos = Math.max(0, pos); lbShow();
+  lbEl.classList.add('open'); document.body.style.overflow = 'hidden';
+}
+function closeLightbox() { lbEl.classList.remove('open'); document.body.style.overflow = ''; }
+function lbStep(d) { if (!LB.items.length) return; LB.pos = (LB.pos + d + LB.items.length) % LB.items.length; lbShow(); }
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); lbStep(-1); });
+document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); lbStep(1); });
+lbEl.addEventListener('click', e => { if (e.target === lbEl) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lbEl.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbStep(-1);
+  if (e.key === 'ArrowRight') lbStep(1);
+});
+let lbX = null;
+lbEl.addEventListener('touchstart', e => { lbX = e.touches[0].clientX; }, { passive: true });
+lbEl.addEventListener('touchend', e => {
+  if (lbX === null) return; const dx = e.changedTouches[0].clientX - lbX; lbX = null;
+  if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1);
+});
+
 /* ── 7. Render error ───────────────────────────────────────────── */
 function renderError(msg) {
   document.getElementById('productGrid').innerHTML = `
@@ -436,27 +518,26 @@ function renderBrand(data) {
   const cardColor = CARD_COLORS[cat.id] || '#F2E6D9';
 
   /* page meta */
-  document.getElementById('pageTitle').textContent   = data.name + ' Products — FineBites';
-  document.getElementById('heroLabel').textContent   = 'FINEBITES · ' + cat.name.toUpperCase() + ' · ' + data.name.toUpperCase();
-  document.getElementById('heroTitle').textContent   = data.name;
-  document.getElementById('heroDesc').textContent    = data.description;
+  document.getElementById('heroLabel').textContent   = 'FINEBITES · ' + data.name.toUpperCase() + ' · ' + data.products.length + ' PRODUCTS';
+  document.getElementById('heroTitle').textContent   = data.name + ' ' + cat.name;
+  document.getElementById('heroDesc').textContent    = cat.description || data.description;
   document.getElementById('heroQuoteBtn').dataset.product = data.name;
   document.getElementById('brandHero').style.background = cat.color || '#1B5E20';
   document.getElementById('sidebarLogo').style.background = cat.color || '#1B5E20';
 
   /* breadcrumb */
-  const catLink = document.getElementById('breadcrumbCat');
-  catLink.textContent = cat.name;
-  catLink.href = 'category-brands.html?cat=' + encodeURIComponent(cat.id);
-  document.getElementById('breadcrumbBrand').textContent = data.name;
+  document.getElementById('breadcrumbBrand').textContent = cat.name;
 
-  /* back link */
-  document.getElementById('backLink').href = 'category-brands.html?cat=' + encodeURIComponent(cat.id);
+  /* sidebar category menu */
+  document.getElementById('sideCats').innerHTML = (window.__catalog.categories || []).map(c => {
+    const n = c.brands.reduce((t, b) => t + b.products.length, 0);
+    return `<li><a href="category/${encodeURIComponent(c.id)}.html" class="${c.id === cat.id ? 'active' : ''}">${c.name}<span>${n}</span></a></li>`;
+  }).join('');
 
   /* sidebar */
   document.getElementById('sidebarLogo').textContent  = data.logo;
   document.getElementById('sidebarCount').textContent = data.products.length + ' Product' + (data.products.length !== 1 ? 's' : '');
-  document.getElementById('sidebarName').textContent  = data.name;
+  document.getElementById('sidebarName').textContent  = data.name + ' ' + cat.name;
   document.getElementById('sidebarDesc').textContent  = data.description;
   document.getElementById('sidebarQuoteBtn').dataset.product = data.name;
 
@@ -467,39 +548,73 @@ function renderBrand(data) {
     return;
   }
 
-  grid.innerHTML = data.products.map(p => {
-    // 1. JSON key check (image or images)
-    const imgUrl = p.image || p.images;
-    
-    // 2. Agar image path ho to <img> show karo, warna fallback SVG icon
-    const mediaContent = imgUrl 
-      ? `<img src="${imgUrl}" alt="${p.name}" style="max-width:100%; max-height:100%; object-fit:contain; padding:10px;">`
-      : icon;
+  const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const vname = v => typeof v === 'string' ? v : v.name;
+  const vimg  = (p, v) => (v && typeof v === 'object' && v.image) ? v.image : (p.image || p.images);
 
+  grid.innerHTML = data.products.map((p, i) => {
+    const imgUrl = p.image || p.images;
+    const mediaContent = imgUrl
+      ? `<img src="${imgUrl}" alt="${esc(p.name)}" loading="lazy">`
+      : icon;
+    const variants = p.variants || [];
+    const chips = variants.length ? `
+          <span class="variant-label">${variants.length} ${variants.some(v => /\d+g$/.test(vname(v))) ? 'Sizes' : 'Variants'}</span>
+          <div class="variant-chips">
+            ${variants.map((v, k) => `<button type="button" class="variant-chip${k === 0 ? ' active' : ''}" data-k="${k}">${esc(vname(v))}</button>`).join('')}
+          </div>` : '';
+    const href = 'products/' + encodeURIComponent(p.id) + '.html';
     return `
-      <div class="product-card reveal">
+      <div class="product-card reveal" data-i="${i}" data-href="${href}">
         <div class="product-card-top" style="background:${cardColor}; display:flex; align-items:center; justify-content:center;">
           ${mediaContent}
         </div>
         <div class="product-card-body">
-          <h3 class="product-name">${p.name}</h3>
-          <p class="product-desc">${p.desc}</p>
+          <a class="product-name-link" href="${href}"><h3 class="product-name">${esc(p.name)}</h3></a>
+          <p class="product-desc">${esc(p.desc)}</p>
+          ${chips}
           <div class="product-tags">
-            ${p.tags.map(t => `<span class="tag-chip">${t}</span>`).join('')}
+            ${(p.tags || []).map(t => `<span class="tag-chip">${esc(t)}</span>`).join('')}
           </div>
-          <button class="btn-quote js-product-quote" data-product="${p.name} — ${data.name}">
-            Request Quote
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
+          <div class="card-actions">
+            <button class="btn-quote js-product-quote">
+              Request Quote
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:14px;height:14px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <a class="btn-details" href="${href}">View details</a>
+          </div>
         </div>
       </div>
     `;
   }).join('');
 
-  /* wire up per-product quote buttons */
-  grid.querySelectorAll('.js-product-quote').forEach(btn =>
-    btn.addEventListener('click', () => openModal(btn.dataset.product))
-  );
+  /* per-card behaviour: variant switching, quote, lightbox */
+  grid.querySelectorAll('.product-card').forEach(card => {
+    const p = data.products[+card.dataset.i];
+    const variants = p.variants || [];
+    let sel = 0;
+    const imgEl = card.querySelector('.product-card-top img');
+    card.querySelectorAll('.variant-chip').forEach(chip => chip.addEventListener('click', () => {
+      sel = +chip.dataset.k;
+      card.querySelectorAll('.variant-chip').forEach(c => c.classList.toggle('active', c === chip));
+      const u = vimg(p, variants[sel]);
+      if (imgEl && u && imgEl.getAttribute('src') !== u) imgEl.src = u;
+    }));
+    card.querySelector('.js-product-quote').addEventListener('click', () => {
+      const v = variants.length ? ' (' + vname(variants[sel]) + ')' : '';
+      openModal(p.name + v + ' — ' + data.name);
+    });
+    const top = card.querySelector('.product-card-top');
+    top.addEventListener('click', () => { location.href = card.dataset.href + (variants.length ? '?v=' + sel : ''); });
+  });
+
+  /* lightbox: every image of every product on this page, in order */
+  LB.items = [];
+  data.products.forEach((p, i) => {
+    const vs = (p.variants || []).filter(v => typeof v === 'object' && v.image);
+    if (vs.length) vs.forEach((v, k) => LB.items.push({ i, k, src: v.image, cap: p.name + ' — ' + v.name }));
+    else if (p.image) LB.items.push({ i, k: 0, src: p.image, cap: p.name });
+  });
 
   /* animate new cards */
   grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
@@ -509,12 +624,13 @@ function renderBrand(data) {
 if (!brandId) {
   renderError('No brand specified. <a href="categories.html" style="color:var(--green)">Browse categories →</a>');
 } else {
-  fetch('/data/catalog.json')
+  fetch('data/catalog.json')
     .then(r => {
       if (!r.ok) throw new Error('Could not load catalog data.');
       return r.json();
     })
     .then(catalog => {
+      window.__catalog = catalog;
       let brand = null;
       let parentCat = null;
       for (const cat of catalog.categories) {
@@ -528,7 +644,7 @@ if (!brandId) {
         name:        brand.name,
         description: brand.description,
         logo:        brand.logo,
-        category:    { id: parentCat.id, name: parentCat.name, color: parentCat.color },
+        category:    { id: parentCat.id, name: parentCat.name, color: parentCat.color, description: parentCat.description },
         products:    brand.products,
       };
     })
@@ -536,5 +652,6 @@ if (!brandId) {
     .catch(err => renderError(err.message));
 }
 </script>
+<script src="js/fb-forms.js"></script>
 </body>
 </html>

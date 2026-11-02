@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "node index.js",
     "start": "node index.js",
     "build": "node build/run.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "images": "node build/images.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
 }

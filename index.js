@@ -15,14 +15,22 @@ const MIME = {
   '.jpeg': 'image/jpeg',
   '.svg':  'image/svg+xml',
   '.ico':  'image/x-icon',
+  '.webp': 'image/webp',
+  '.avif': 'image/avif',
+  '.gif':  'image/gif',
+  '.woff2':'font/woff2',
+  '.xml':  'application/xml',
+  '.txt':  'text/plain',
 };
 
 /* ── helper: send a file ─────────────────────────────────────── */
 function sendFile(res, filePath) {
   fs.readFile(filePath, (err, content) => {
     if (err) {
-      res.writeHead(404, { 'Content-Type': 'text/html' });
-      res.end('<h1>404 – Page Not Found</h1>');
+      fs.readFile(path.join(ROOT, '404.html'), (e2, page) => {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(e2 ? '<h1>404 – Page Not Found</h1>' : page);
+      });
       return;
     }
     const ext = path.extname(filePath);
@@ -123,7 +131,7 @@ const server = http.createServer((req, res) => {
   }
 
   /* ── static files ───────────────────────────────────────────── */
-  let filePath = path.join(ROOT, urlPath === '/' ? 'coming-soon.html' : urlPath);
+  let filePath = path.join(ROOT, urlPath === '/' ? 'index.html' : urlPath);
 
   // security: prevent path traversal
   if (!filePath.startsWith(ROOT)) {
@@ -132,7 +140,7 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (!err && stats.isDirectory()) {
-      filePath = path.join(filePath, 'coming-soon.html');
+      filePath = path.join(filePath, 'index.html');
     }
     sendFile(res, filePath);
   });
