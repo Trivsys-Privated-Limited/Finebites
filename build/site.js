@@ -77,7 +77,7 @@ const ORG = {
   telephone: SITE.phone,
   description: 'UAE wholesale confectionery supplier of Saara chocolates, biscuits, lollipops, candy, toffees, gummies and wafers.',
   address: { '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.locality, addressRegion: SITE.region, addressCountry: SITE.country },
-  areaServed: ['AE', 'SA', 'KW', 'QA', 'BH', 'OM'],
+  areaServed: ['AE', 'SA', 'KW', 'QA', 'BH', 'OM', 'TD', 'KE'],
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '09:00', closes: '18:00' }],
   contactPoint: [{ '@type': 'ContactPoint', telephone: SITE.phone, contactType: 'sales', areaServed: 'AE', availableLanguage: ['en', 'ar'] }],
 };

@@ -71,3 +71,54 @@ html.menu-open .nav .logo .bites,html.menu-open .nav .logo svg{color:#B8860B !im
   .nav .mobile-cats a{font-size:14px;padding:10px 12px;}
 }
 @media (prefers-reduced-motion:reduce){ .nav .mobile-overlay{transition:none;transform:none;} }
+
+/* never let decorative overflow (rotated marquee, glows) widen the page on phones */
+html,body{overflow-x:clip;}
+
+/* =====================================================================
+   Desktop mega menu: category names on the left, a photo on the right
+   that switches on hover (js/menu.js toggles .on).
+   ===================================================================== */
+.nav .mega-dropdown.mega-v2{
+  width:min(640px,calc(100vw - 40px));padding:0;display:grid;grid-template-columns:1fr 1.05fr;overflow:hidden;
+  background:#fff;border:2px solid #123E15;border-radius:22px;box-shadow:8px 8px 0 #123E15;
+  transform:translate(-50%,14px) scale(.98);transform-origin:top center;
+  transition:opacity .25s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1);}
+.nav .nav-products:hover .mega-dropdown.mega-v2,.nav .nav-products:focus-within .mega-dropdown.mega-v2{opacity:1;pointer-events:auto;transform:translate(-50%,0) scale(1);}
+.mega-v2 .mega-list{display:flex;flex-direction:column;padding:18px 12px 14px 14px;}
+.mega-v2 .mega-title{font:800 10.5px 'Inter',sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#B8860B;padding:2px 12px 10px;}
+.nav .mega-v2 .mega-list a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:12px;
+  color:#123E15;text-decoration:none;background:transparent;transition:background .2s,color .2s,padding .25s cubic-bezier(.16,1,.3,1);}
+.nav .mega-v2 .mega-list a::after{display:none !important;}
+.mega-v2 .mega-name{display:flex;flex-direction:column;font:800 15px 'Inter',sans-serif;line-height:1.2;}
+.mega-v2 .mega-name small{font-weight:500;font-size:12px;color:#6B6258;margin-top:2px;transition:color .2s;}
+.mega-v2 .mega-list a > svg{width:16px;height:16px;flex-shrink:0;opacity:0;transform:translateX(-8px);transition:opacity .2s,transform .25s;}
+.nav .mega-v2 .mega-list a.on{background:#123E15;color:#fff;padding-left:16px;}
+.nav .mega-v2 .mega-list a.on small{color:rgba(255,255,255,.7);}
+.nav .mega-v2 .mega-list a.on > svg{opacity:1;transform:none;color:#D4A62A;}
+.nav .mega-v2 .mega-list a.mega-all{margin-top:8px;padding:11px 12px;border-top:1px dashed rgba(18,62,21,.2);border-radius:0 0 12px 12px;
+  justify-content:flex-start;gap:8px;font:800 13px 'Inter',sans-serif;color:#B8860B;}
+.nav .mega-v2 .mega-list a.mega-all > svg{opacity:1;transform:none;width:14px;height:14px;transition:transform .25s;}
+.nav .mega-v2 .mega-list a.mega-all:hover{background:transparent;color:#123E15;}
+.nav .mega-v2 .mega-list a.mega-all:hover > svg{transform:translateX(4px);}
+.mega-v2 .mega-preview{position:relative;min-height:100%;
+  background:radial-gradient(70% 60% at 70% 30%,rgba(212,166,42,.35),transparent 70%),radial-gradient(60% 60% at 20% 90%,rgba(67,160,71,.35),transparent 70%),#FDF8F0;}
+.mega-v2 .mega-preview::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(18,62,21,.12) 1px,transparent 1px);background-size:14px 14px;}
+.mega-v2 figure{position:absolute;inset:0;margin:0;display:flex;align-items:center;justify-content:center;padding:28px 26px 56px;
+  opacity:0;transform:scale(.92) translateY(10px) rotate(-2deg);transition:opacity .35s,transform .5s cubic-bezier(.16,1,.3,1);}
+.mega-v2 figure.on{opacity:1;transform:none;}
+.mega-v2 figure img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(18,62,21,.28));}
+.mega-v2 figcaption{position:absolute;left:16px;bottom:16px;padding:7px 14px;border-radius:999px;background:#123E15;color:#fff;
+  font:800 12.5px 'Inter',sans-serif;letter-spacing:.3px;box-shadow:3px 3px 0 #B8860B;}
+@media (max-width:1024px){
+  .nav .mega-dropdown.mega-v2{width:min(560px,calc(100vw - 40px));}
+  .mega-v2 .mega-name small{display:none;}
+}
+
+/* mobile menu category chips: product thumbnails instead of dots */
+.nav .mobile-cats a img{width:30px;height:30px;flex-shrink:0;border-radius:9px;object-fit:contain;background:#FDF8F0;padding:2px;}
+.nav .mobile-cats a:has(img)::before{display:none;}
+.nav .mobile-cats a:has(img){padding:8px 12px 8px 8px;}
+.nav .mobile-cats a.mc-all{justify-content:center;background:rgba(184,134,11,.18);border-color:rgba(212,166,42,.55);color:#F3DC9B;font-weight:700;}
+.nav .mobile-cats a.mc-all::before{display:none;}
+.nav .mobile-cats a.mc-all::after{content:"\2192";margin-left:6px;}

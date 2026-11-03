@@ -32,3 +32,19 @@
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) close(); });
   window.addEventListener('resize', function(){ if(window.innerWidth > 768 && overlay.classList.contains('open')) close(); });
 })();
+
+/* desktop mega menu: switch the photo on hover / keyboard focus */
+(function(){
+  document.querySelectorAll('.mega-v2').forEach(function(m){
+    var links = m.querySelectorAll('.mega-list a[data-i]');
+    var figs = m.querySelectorAll('.mega-preview figure');
+    function show(i){
+      links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('data-i') === i); });
+      figs.forEach(function(f){ f.classList.toggle('on', f.getAttribute('data-i') === i); });
+    }
+    links.forEach(function(a){
+      a.addEventListener('mouseenter', function(){ show(a.getAttribute('data-i')); });
+      a.addEventListener('focus', function(){ show(a.getAttribute('data-i')); });
+    });
+  });
+})();

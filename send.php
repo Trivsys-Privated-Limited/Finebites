@@ -57,6 +57,16 @@ $message  = field('message', 3000, true);
 $formName = field('form', 60);
 $page     = field('page', 300);
 
+/* footer newsletter signup: only an email address */
+if ($formName === 'Newsletter') {
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) out(false, 422, 'fields');
+  $nlBody  = "New newsletter signup from the FineBites website\n\nEmail: " . $email . "\n\n--\nPage: " . $page . "\nSent: " . gmdate('Y-m-d H:i') . " UTC\nIP: " . $ip . "\n";
+  $nlHead  = 'From: FineBites Website <' . $FROM . ">\r\nReply-To: " . $email . "\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n";
+  $nlSubj  = '=?UTF-8?B?' . base64_encode('Newsletter signup: ' . $email) . '?=';
+  if (!@mail($TO, $nlSubj, $nlBody, $nlHead)) out(false, 500, 'mail');
+  out(true);
+}
+
 if ($name === '' || $phone === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) out(false, 422, 'fields');
 
 $lines = [

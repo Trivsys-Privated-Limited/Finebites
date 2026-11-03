@@ -220,6 +220,7 @@ a.product-name-link:hover .product-name{color:var(--green);}
 </style>
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
@@ -234,15 +235,28 @@ a.product-name-link:hover .product-name{color:var(--green);}
       <li><a href="index.html">Home</a></li>
       <li class="nav-products">
         <a href="index.html#range">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="chevron"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="mega-dropdown"><div class="mega-grid">
-          <a href="category/lollipops.html">Lollipops</a>
-          <a href="category/biscuits.html">Biscuits</a>
-          <a href="category/chocolates.html">Chocolates</a>
-          <a href="category/gummies.html">Gummies</a>
-          <a href="category/wafers.html">Wafers</a>
-          <a href="category/toffees.html">Toffees</a>
-          <a href="category/candy.html">Candy</a>
-        </div></div>
+        <div class="mega-dropdown mega-v2">
+          <div class="mega-list">
+            <span class="mega-title">Our range</span>
+            <a href="category/chocolates.html" data-i="0" class="on"><span class="mega-name">Chocolates<small>Truffles, bars & creme treats</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="category/biscuits.html" data-i="1"><span class="mega-name">Biscuits<small>Cream, digestive & tea-time</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="category/lollipops.html" data-i="2"><span class="mega-name">Lollipops<small>Pops, fizz & fruit flavours</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="category/candy.html" data-i="3"><span class="mega-name">Candy<small>Bon bons & hard candy</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="category/toffees.html" data-i="4"><span class="mega-name">Toffees<small>Eclairs, caramel & fudge</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="category/gummies.html" data-i="5"><span class="mega-name">Gummies<small>Jellies & bubble gum</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="category/wafers.html" data-i="6"><span class="mega-name">Wafers<small>Crispy wafer bites</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="mega-all" href="categories.html">View all categories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="mega-preview" aria-hidden="true">
+            <figure data-i="0" class="on"><img src="images/saara/premium-truffle.webp" alt="" loading="lazy" decoding="async"><figcaption>Chocolates</figcaption></figure>
+            <figure data-i="1"><img src="images/saara/creamfist.webp" alt="" loading="lazy" decoding="async"><figcaption>Biscuits</figcaption></figure>
+            <figure data-i="2"><img src="images/saara/big-bom-xl.webp" alt="" loading="lazy" decoding="async"><figcaption>Lollipops</figcaption></figure>
+            <figure data-i="3"><img src="images/saara/fruit-bon-bon.webp" alt="" loading="lazy" decoding="async"><figcaption>Candy</figcaption></figure>
+            <figure data-i="4"><img src="images/saara/eclairs-toffee.webp" alt="" loading="lazy" decoding="async"><figcaption>Toffees</figcaption></figure>
+            <figure data-i="5"><img src="images/saara/fresh-olive-bubble-gum.webp" alt="" loading="lazy" decoding="async"><figcaption>Gummies</figcaption></figure>
+            <figure data-i="6"><img src="images/saara/choco-bites.webp" alt="" loading="lazy" decoding="async"><figcaption>Wafers</figcaption></figure>
+          </div>
+        </div>
       </li>
     <!-- <li><a href="categories.html">Categories</a></li> -->
       <li><a href="about.html">About</a></li>
@@ -258,13 +272,14 @@ a.product-name-link:hover .product-name{color:var(--green);}
       <a href="index.html">Home</a>
       <span class="mobile-sub-label">Products</span>
       <div class="mobile-cats">
-        <a href="category/lollipops.html">Lollipops</a>
-        <a href="category/biscuits.html">Biscuits</a>
-        <a href="category/chocolates.html">Chocolates</a>
-        <a href="category/gummies.html">Gummies</a>
-        <a href="category/wafers.html">Wafers</a>
-        <a href="category/toffees.html">Toffees</a>
-        <a href="category/candy.html">Candy</a>
+        <a href="category/chocolates.html"><img src="images/saara/premium-truffle.webp" alt="" loading="lazy" decoding="async">Chocolates</a>
+        <a href="category/biscuits.html"><img src="images/saara/creamfist.webp" alt="" loading="lazy" decoding="async">Biscuits</a>
+        <a href="category/lollipops.html"><img src="images/saara/big-bom-xl.webp" alt="" loading="lazy" decoding="async">Lollipops</a>
+        <a href="category/candy.html"><img src="images/saara/fruit-bon-bon.webp" alt="" loading="lazy" decoding="async">Candy</a>
+        <a href="category/toffees.html"><img src="images/saara/eclairs-toffee.webp" alt="" loading="lazy" decoding="async">Toffees</a>
+        <a href="category/gummies.html"><img src="images/saara/fresh-olive-bubble-gum.webp" alt="" loading="lazy" decoding="async">Gummies</a>
+        <a href="category/wafers.html"><img src="images/saara/choco-bites.webp" alt="" loading="lazy" decoding="async">Wafers</a>
+        <a class="mc-all" href="categories.html">View all</a>
       </div>
      <!-- <a href="categories.html">Categories</a> -->
       <a href="about.html">About</a>
@@ -334,34 +349,82 @@ a.product-name-link:hover .product-name{color:var(--green);}
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="fb-footer">
+  <div class="fbf-deco" aria-hidden="true"><span class="fbf-orb o1"></span><span class="fbf-orb o2"></span><span class="fbf-candy c1"></span><span class="fbf-candy c2"></span><span class="fbf-candy c3"></span><span class="fbf-candy c4"></span></div>
   <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg><span><span class="fine">FINE</span><span class="bites">BiTES</span></span></div>
-        <p class="footer-desc">Premium wholesale confectionery, supplying distributors, supermarkets and bakeries across the UAE and the wider Gulf.</p>
+    <div class="fbf-news fbf-rise">
+      <div class="fbf-news-copy">
+        <span class="fbf-kicker">Newsletter</span>
+        <h3>New arrivals &amp; trade offers, <em>first.</em></h3>
+        <p>Monthly stock updates and wholesale deals for retailers across the Gulf. No spam, unsubscribe any time.</p>
       </div>
-      <div>
-        <h4>Quick Links</h4>
+      <form class="fbf-news-form" id="newsletterForm" novalidate>
+        <div class="fbf-field">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <label class="fbf-sr" for="fbfEmail">Email address</label>
+          <input id="fbfEmail" type="email" name="email" placeholder="Your business email" autocomplete="email" required>
+          <input class="fbf-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit"><span>Subscribe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+        <p class="fbf-news-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="fbf-grid">
+      <div class="fbf-brand fbf-rise">
+        <a class="fbf-logo" href="index.html" aria-label="FineBites home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20C4 11 11 4 20 4C20 13 13 20 4 20Z"/><path d="M4.5 19.5C9 15 13 11 18.5 5.5"/></svg><span><span class="fine">FINE</span><span class="bites">BiTES</span></span></a>
+        <p>Premium wholesale confectionery, supplying distributors, supermarkets and bakeries across the UAE and the wider Gulf.</p>
+        <div class="fbf-social">
+          <a href="https://wa.me/971527097123" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+          <a href="tel:+97145828085" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+          <a href="mailto:info@finebitesllc.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="https://maps.google.com/?q=Al+Ras+112+Building,+Al+Ras,+Deira,+Dubai" target="_blank" rel="noopener" aria-label="Map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="fbf-col fbf-rise">
+        <h4>Explore</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-        <!--  <li><a href="categories.html">Categories</a></li> -->
-          <li><a href="about.html">About</a></li>
+          <li><a href="categories.html">All Products</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><button class="js-open-modal" type="button">Request a Quote</button></li>
         </ul>
       </div>
-      <div><h4>Categories</h4><ul>
-        <li><a href="category/lollipops.html">Lollipops</a></li>
-        <li><a href="category/biscuits.html">Biscuits</a></li>
-        <li><a href="category/chocolates.html">Chocolates</a></li>
-        <li><a href="category/gummies.html">Gummies</a></li>
-        <li><a href="category/wafers.html">Wafers</a></li>
-        <li><a href="category/toffees.html">Toffees</a></li>
-        <li><a href="category/candy.html">Candy</a></li>
-      </ul></div>
-      <div><h4>Contact</h4><ul><li>Al Ras, Deira, Dubai, UAE</li><li><a href="mailto:info@finebitesllc.com">info@finebitesllc.com</a></li><li><a href="https://wa.me/971527097123" target="_blank" rel="noopener">+971 52 709 7123</a></li></ul></div>
+
+      <div class="fbf-col fbf-rise">
+        <h4>Categories</h4>
+        <ul class="fbf-two">
+          <li><a href="category/chocolates.html">Chocolates</a></li>
+          <li><a href="category/biscuits.html">Biscuits</a></li>
+          <li><a href="category/lollipops.html">Lollipops</a></li>
+          <li><a href="category/candy.html">Candy</a></li>
+          <li><a href="category/toffees.html">Toffees</a></li>
+          <li><a href="category/gummies.html">Gummies</a></li>
+          <li><a href="category/wafers.html">Wafers</a></li>
+        </ul>
+      </div>
+
+      <div class="fbf-col fbf-visit fbf-rise">
+        <h4>Visit Us</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Office 103, Al Ras 112 Building,<br>Al Ras, Deira, Dubai</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2.5"/></svg><span>Sun – Thu, 9:00 – 18:00</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="https://wa.me/971527097123" target="_blank" rel="noopener">+971 52 709 7123</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@finebitesllc.com">info@finebitesllc.com</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2026 FineBites. All rights reserved.</span><span>Powered by PBS Digitals</span></div>
+
+    <div class="fbf-word" aria-hidden="true"><span>F</span><span>I</span><span>N</span><span>E</span><span>B</span><span>I</span><span>T</span><span>E</span><span>S</span></div>
+
+    <div class="fbf-bottom">
+      <span>&copy; <span class="fbf-year">2026</span> FineBites. All rights reserved.</span>
+      <span class="fbf-badges"><span>Exporting to Africa &amp; GCC</span><span>Wholesale only</span></span>
+      <span>Powered by PBS Digitals</span>
+      <button class="fbf-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+    </div>
   </div>
 </footer>
 
@@ -678,5 +741,6 @@ if (!brandId) {
 <script src="js/theme.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/inquiry.js"></script>
+<script src="js/footer.js"></script>
 </body>
 </html>
