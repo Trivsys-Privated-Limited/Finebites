@@ -53,6 +53,22 @@ function sendJSON(res, data) {
 const server = http.createServer((req, res) => {
   const urlPath = decodeURIComponent(req.url.split('?')[0]);
 
+  /* ── dev stand-in for send.php (PHP only runs on Hostinger) ── */
+  if (req.method === 'POST' && urlPath === '/send.php') {
+    let raw = '';
+    req.on('data', c => { raw += c; if (raw.length > 1e5) req.destroy(); });
+    req.on('end', () => {
+      const fields = {};
+      raw.split(/-{2,}[^\r\n]*\r?\n/).forEach(part => {
+        const m = part.match(/name="([^"]+)"\r?\n\r?\n([\s\S]*?)\r?\n?$/);
+        if (m && m[1] !== 'website') fields[m[1]] = m[2].trim();
+      });
+      console.log('\n[dev] inquiry received (not emailed locally):', fields);
+      sendJSON(res, { ok: true, dev: true });
+    });
+    return;
+  }
+
   /* ── API: full catalog ──────────────────────────────────────── */
   if (urlPath === '/api/catalog') {
     const catalogPath = path.join(ROOT, 'data', 'catalog.json');
